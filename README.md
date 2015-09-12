@@ -22,7 +22,7 @@ To this image and play around with NiFi:
         # -i : interactive
         # -t : allocate TTY
         # -p : publish each container port to host port. format: ip:hostPort:containerPort | ip::containerPort | hostPort:containerPort | containerPort
-        docker run -it --rm -p 8080-8081:8080-8081 kobitm/personal-nifi
+        docker run -it --rm -p 8080-8081:8080-8081 mkobit/personal-nifi
 
 3. Go to local endpoint http://localhost:8080/nifi/
 
