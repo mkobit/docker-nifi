@@ -19,6 +19,7 @@ RUN set -x \
 
 # Add volumes and replace props in the file?
 
+# Open port 8081 for the HTTP listen
 WORKDIR $NIFI_HOME
 EXPOSE 8080 8081
 ENTRYPOINT ["bin/nifi.sh"]
