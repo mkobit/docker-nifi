@@ -3,7 +3,7 @@ This is an unofficial [Apache NiFi](https://nifi.apache.org/) Docker image
 
 * [Docker Hub](#docker-hub)
 * [Running Image](#running-image)
-# [ListenHTTP Processor](#listenhttp-processor)
+* [ListenHTTP Processor](#listenhttp-processor)
 * [Usage](#usage)
 
 ## Docker Hub
@@ -24,7 +24,7 @@ To this image and play around with NiFi:
         # -p : publish each container port to host port. format: ip:hostPort:containerPort | ip::containerPort | hostPort:containerPort | containerPort
         docker run -it --rm -p 8080-8081:8080-8081 mkobit/personal-nifi
 
-3. Go to local endpoint http://localhost:8080/nifi/
+3. Go to local endpoint [http://localhost:8080/nifi/](http://localhost:8080/nifi/)
 
 # NiFi Documentation and Guides
 These are links to the official NiFi documentation
