@@ -1,4 +1,4 @@
-# Docker Apache nifiNiFi
+# Docker Apache NiFi
 This is an unofficial [Apache NiFi](https://nifi.apache.org/) Docker image
 
 ## Base image
@@ -32,7 +32,7 @@ To run this image and play around with NiFi:
 ### Extending
 This can easily be used as a base image to create NiFi applications.
 
-## Officail Apache NiFi Documentation and Guides
+## Official Apache NiFi Documentation and Guides
 
 * [Overview](https://nifi.apache.org/docs.html)
 * [User Guide](https://nifi.apache.org/docs/nifi-docs/html/user-guide.html)
