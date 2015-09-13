@@ -13,19 +13,19 @@ To run this image and play around with NiFi:
 
 1. Pull `latest` image
 
-```console
-docker pull mkobit/nifi
-```
+    ```console
+    docker pull mkobit/nifi
+    ```
 
 2. Run image and expose default ports.
 
-```console
-# --rm : remove container on exit
-# -i : interactive
-# -t : allocate TTY
-# -p : publish each container port to host port. format: ip:hostPort:containerPort | ip::containerPort | hostPort:containerPort | containerPort
-docker run -it --rm -p 8080-8081:8080-8081 mkobit/nifi
-```
+    ```console
+    # --rm : remove container on exit
+    # -i : interactive
+    # -t : allocate TTY
+    # -p : publish each container port to host port. format: ip:hostPort:containerPort | ip::containerPort | hostPort:containerPort | containerPort
+    docker run -it --rm -p 8080-8081:8080-8081 mkobit/nifi
+    ```
 
 3. Go to default local NiFi endpoint in browser - [http://localhost:8080/nifi/](http://localhost:8080/nifi/)
 
