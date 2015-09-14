@@ -17,7 +17,13 @@ RUN set -x \
         && tar -z -x -f /tmp/nifi-bin.tar.gz -C /opt/nifi --strip-components=1 \
         && rm /tmp/nifi-bin.tar.gz /tmp/nifi-bin.tar.gz.asc /tmp/nifi-bin.tar.gz.md5
 
-# Add volumes and replace props in the file?
+# These are the volumes (in order) for the following:
+# 1) user access and flow controller history
+# 2) FlowFile attributes and current state in the system
+# 3) content for all the FlowFiles in the system
+# 4) information related to Data Provenance
+# You can find more information about the system properties here - https://nifi.apache.org/docs/nifi-docs/html/administration-guide.html#system_properties
+VOLUME ["$NIFI_HOME/database_repository", "$NIFI_HOME/flowfile_repository", "$NIFI_HOME/content_repository", "$NIFI_HOME/provenance_repository"]
 
 # Open port 8081 for the HTTP listen
 WORKDIR $NIFI_HOME
