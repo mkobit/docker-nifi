@@ -7,11 +7,11 @@ ENV NIFI_VERSION=0.2.1 \
 # Import the Apache NiFi release keys
 # Can't currently verify the SHA1 because the https://dist.apache.org/repos/dist/release/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz.sha1 is incorrectly truncated
 RUN set -x \
-        && curl -sSL https://dist.apache.org/repos/dist/release/nifi/KEYS -o /tmp/nifi-keys \
+        && curl -sSLf https://dist.apache.org/repos/dist/release/nifi/KEYS -o /tmp/nifi-keys \
         && gpg --import /tmp/nifi-keys \
-        && curl -sSL http://mirror.symnds.com/software/Apache/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz -o /tmp/nifi-bin.tar.gz \
-        && curl -sSL https://dist.apache.org/repos/dist/release/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz.asc -o /tmp/nifi-bin.tar.gz.asc \
-        && curl -sSL https://dist.apache.org/repos/dist/release/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz.md5 -o /tmp/nifi-bin.tar.gz.md5 \
+        && curl -sSLf http://mirror.symnds.com/software/Apache/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz -o /tmp/nifi-bin.tar.gz \
+        && curl -sSLf https://dist.apache.org/repos/dist/release/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz.asc -o /tmp/nifi-bin.tar.gz.asc \
+        && curl -sSLf https://dist.apache.org/repos/dist/release/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz.md5 -o /tmp/nifi-bin.tar.gz.md5 \
         && gpg --verify /tmp/nifi-bin.tar.gz.asc /tmp/nifi-bin.tar.gz \
         && echo "$(cat /tmp/nifi-bin.tar.gz.md5) /tmp/nifi-bin.tar.gz" | md5sum -c - \
         && mkdir -p /opt/nifi \
