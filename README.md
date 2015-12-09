@@ -33,7 +33,7 @@ To run this image and play around with NiFi:
 This can easily be used as a base image to create NiFi applications.
 
 ### Volumes
-Each of these volumes is exposed. These are the default locations as specified by the Apache NiFi properties. You can find more information about these on the [System Administration Guide](https://nifi.apache.org/docs/nifi-docs/html/administration-guide.html)
+Each of these volumes are exposed. These are the default locations as specified by the Apache NiFi properties. You can find more information about these on the [System Administration Guide](https://nifi.apache.org/docs/nifi-docs/html/administration-guide.html)
 
 - `$NIFI_HOME/database_repository` - user access and flow controller history
 - `$NIFI_HOME/flowfile_repository` - FlowFile attributes and current state in the system
