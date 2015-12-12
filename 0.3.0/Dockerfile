@@ -15,8 +15,8 @@ RUN set -x \
         && gpg --verify /tmp/nifi-bin.tar.gz.asc /tmp/nifi-bin.tar.gz \
         && echo "$(cat /tmp/nifi-bin.tar.gz.md5) /tmp/nifi-bin.tar.gz" | md5sum -c - \
         && echo "$(cat /tmp/nifi-bin.tar.gz.sha1) /tmp/nifi-bin.tar.gz" | sha1sum -c - \
-        && mkdir -p /opt/nifi \
-        && tar -z -x -f /tmp/nifi-bin.tar.gz -C /opt/nifi --strip-components=1 \
+        && mkdir -p $NIFI_HOME \
+        && tar -z -x -f /tmp/nifi-bin.tar.gz -C $NIFI_HOME --strip-components=1 \
         && rm /tmp/nifi-bin.tar.gz /tmp/nifi-bin.tar.gz.asc /tmp/nifi-bin.tar.gz.md5 /tmp/nifi-bin.tar.gz.sha1 \
         && rm /tmp/nifi-keys.txt
 

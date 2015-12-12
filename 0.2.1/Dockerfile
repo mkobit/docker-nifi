@@ -14,8 +14,8 @@ RUN set -x \
         && curl -Lf https://archive.apache.org/dist/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz.md5 -o /tmp/nifi-bin.tar.gz.md5 \
         && gpg --verify /tmp/nifi-bin.tar.gz.asc /tmp/nifi-bin.tar.gz \
         && echo "$(cat /tmp/nifi-bin.tar.gz.md5) /tmp/nifi-bin.tar.gz" | md5sum -c - \
-        && mkdir -p /opt/nifi \
-        && tar -z -x -f /tmp/nifi-bin.tar.gz -C /opt/nifi --strip-components=1 \
+        && mkdir -p $NIFI_HOME \
+        && tar -z -x -f /tmp/nifi-bin.tar.gz -C $NIFI_HOME --strip-components=1 \
         && rm /tmp/nifi-bin.tar.gz /tmp/nifi-bin.tar.gz.asc /tmp/nifi-bin.tar.gz.md5 \
         && rm /tmp/nifi-keys.txt
 
