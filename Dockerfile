@@ -6,12 +6,12 @@ ENV NIFI_VERSION=0.3.0 \
 # Picked recommended mirror from Apache for the distribution.
 # Import the Apache NiFi release keys
 RUN set -x \
-        && curl -sSLf https://dist.apache.org/repos/dist/release/nifi/KEYS -o /tmp/nifi-keys \
+        && curl -Lf https://dist.apache.org/repos/dist/release/nifi/KEYS -o /tmp/nifi-keys \
         && gpg --import /tmp/nifi-keys \
-        && curl -sSLf http://apache.mirrors.lucidnetworks.net/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz  -o /tmp/nifi-bin.tar.gz \
-        && curl -sSLf https://dist.apache.org/repos/dist/release/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz.asc -o /tmp/nifi-bin.tar.gz.asc \
-        && curl -sSLf https://dist.apache.org/repos/dist/release/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz.md5 -o /tmp/nifi-bin.tar.gz.md5 \
-        && curl -sSLf https://dist.apache.org/repos/dist/release/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz.sha1 -o /tmp/nifi-bin.tar.gz.sha1 \
+        && curl -Lf http://apache.mirrors.lucidnetworks.net/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz  -o /tmp/nifi-bin.tar.gz \
+        && curl -Lf https://dist.apache.org/repos/dist/release/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz.asc -o /tmp/nifi-bin.tar.gz.asc \
+        && curl -Lf https://dist.apache.org/repos/dist/release/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz.md5 -o /tmp/nifi-bin.tar.gz.md5 \
+        && curl -Lf https://dist.apache.org/repos/dist/release/nifi/$NIFI_VERSION/nifi-$NIFI_VERSION-bin.tar.gz.sha1 -o /tmp/nifi-bin.tar.gz.sha1 \
         && gpg --verify /tmp/nifi-bin.tar.gz.asc /tmp/nifi-bin.tar.gz \
         && echo "$(cat /tmp/nifi-bin.tar.gz.md5) /tmp/nifi-bin.tar.gz" | md5sum -c - \
         && echo "$(cat /tmp/nifi-bin.tar.gz.sha1) /tmp/nifi-bin.tar.gz" | sha1sum -c - \
