@@ -1,4 +1,4 @@
-# Docker Apache NiFi
+# Docker Apache NiFi - [![](https://badge.imagelayers.io/mkobit/nifi:latest.svg)](https://imagelayers.io/?images=mkobit/nifi:latest 'Get your own badge on imagelayers.io')
 
 This is an unofficial [Apache NiFi](https://nifi.apache.org/) Docker image
 
