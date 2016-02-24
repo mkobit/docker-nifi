@@ -10,7 +10,7 @@ Both the *0.3.0* and *0.2.1* versions use [java/8](https://hub.docker.com/_/java
 
 ## Latest release and image
 
-The latest version of NiFi is the *0.4.0* release (December 11th 2015). The release notes can be found [here](https://cwiki.apache.org/confluence/display/NIFI/Release+Notes#ReleaseNotes-Version0.4.0).
+The latest version of NiFi is the *0.5.0* release (February 16th 2016). The release notes can be found [here](https://cwiki.apache.org/confluence/display/NIFI/Release+Notes#ReleaseNotes-Version0.5.0).
 
 The *latest* image is the same as the *0.4.0-openjdk-8* image.
 
