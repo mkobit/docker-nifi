@@ -89,7 +89,7 @@ def push(args):
 
   # subprocess.run(login_args, check=True)
   for docker_tag in docker_tags:
-    push_args = ['docker', 'push' docker_tag]
+    push_args = ['docker', 'push', docker_tag]
     logger.info('Pushing docker image={}'.format(docker_tag))
     # subprocess.run(push_args, check=True)
   #TODO remove env
