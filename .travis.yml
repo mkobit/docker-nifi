@@ -20,9 +20,9 @@ env:
       DOCKER_TAGS="0.5.1-openjdk-8,latest"
       TEMPLATE_VALUES="base_image=java:8,nifi_version=0.5.1"
       DESTINATION="0.5.1-openjdk-8"
-before_script: make_docker.py -h
+before_script: ./make_docker.py -h
 script: >-
-  make_docker.py
+  ./make_docker.py
   --repository mkobit/nifi
   --templateFile $TEMPLATE_FILE
   --templateSubstitutions $TEMPLATE_VALUES
