@@ -4,8 +4,28 @@ python:
 sudo: "required"
 services:
   - docker
-install: "pip install -r requirements.txt"
 env:
   matrix:
-    - TEMPLATE_FILE="templates/Dockerfile-template" BASE_IMAGE="java:8" GIT_TAG_NAME="nifi-0.5.1" DOCKER_TAGS="0.5.0-openjdk-8,latest"
-script: make_docker.py --repository mkobit/nifi --no-docker-build --no-docker-push
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      BASE_IMAGE="java:7"
+      GIT_TAG_NAME="nifi-0.5.1"
+      DOCKER_TAGS="0.5.1-openjdk-7,latest"
+      TEMPLATE_VALUES="base_image=java:7,nifi_version=0.5.1"
+      DESTINATION="0.5.1-openjdk-7"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      BASE_IMAGE="java:8"
+      GIT_TAG_NAME="nifi-0.5.1"
+      DOCKER_TAGS="0.5.1-openjdk-8,latest"
+      TEMPLATE_VALUES="base_image=java:8,nifi_version=0.5.1"
+      DESTINATION="0.5.1-openjdk-8"
+before_script: make_docker.py -h
+script: >-
+  make_docker.py
+  --repository mkobit/nifi
+  --templateFile $TEMPLATE_FILE
+  --templateSubstitutions $TEMPLATE_VALUES
+  --destinationFile $DESTINATION
+  --no-docker-build
+  --no-docker-push
