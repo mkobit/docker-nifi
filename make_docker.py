@@ -26,17 +26,21 @@ def template_properties(arg):
                             substitutions, props))
   return substitutions
 
-def main(args):
-  logger.debug('Starting make_docker.py with args="{}"'.format(args))
-  with args.templateFile as templateFile:
-    logger.info('Reading from templateFile={}'.format(templateFile.name))
-    template = string.Template(templateFile.read())
+def write_template(templateFile, substitions, destinationFile):
+  logger.info('Reading from templateFile={}'.format(templateFile.name))
+  template = string.Template(templateFile.read())
   logger.info('Substitutions for template={}'.format(
               args.templateSubstitutions))
   content = template.substitute(args.templateSubstitutions)
-  with args.destinationFile as destinationFile:
-    logger.info('Writing to destinationFile={}'.format(destinationFile.name))
-    destinationFile.write(content)
+  logger.info('Writing to destinationFile={}'.format(destinationFile.name))
+  destinationFile.write(content)
+
+def main(args):
+  logger.debug('Starting make_docker.py with args="{}"'.format(args))
+  with args.templateFile as templateFile, \
+        args.destinationFile as destinationFile:
+    write_template(templateFile, args.templateSubstitutions, destinationFile)
+  
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser(description='Generate and build NiFi' \
