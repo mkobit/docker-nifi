@@ -1,21 +1,11 @@
-sudo: required
-language: bash
+language: "python"
+python:
+  - "3.5"
+sudo: "required"
 services:
   - docker
-install: true
+install: "pip install -r requirements.txt"
 env:
-  global:
-    - IMAGE_NAME=mkobit/nifi
   matrix:
-    - BASE_IMAGE="java:8" NIFI_VERSION="0.2.1" TAG_NAMES="0.2.1"
-    - BASE_IMAGE="java:8" NIFI_VERSION="0.3.0" TAG_NAMES="0.3.0"
-    - BASE_IMAGE="java:7" NIFI_VERSION="0.4.0" TAG_NAMES="0.4.0-openjdk-7"
-    - BASE_IMAGE="java:8" NIFI_VERSION="0.4.0" TAG_NAMES="0.4.0-openjdk-8"
-    - BASE_IMAGE="java:9" NIFI_VERSION="0.4.0" TAG_NAMES="0.4.0-openjdk-9"
-    - BASE_IMAGE="airdock/oracle-jdk:1.7" NIFI_VERSION="0.4.0" TAG_NAMES="0.4.0-oracle-java7"
-    - BASE_IMAGE="airdock/oracle-jdk:1.8" NIFI_VERSION="0.4.0" TAG_NAMES="0.4.0-oracle-java8"
-    - BASE_IMAGE="java:7" NIFI_VERSION="0.4.1" TAG_NAMES="0.4.1-openjdk-7"
-    - BASE_IMAGE="java:8" NIFI_VERSION="0.4.1" TAG_NAMES="0.4.1-oracle-java8, 0.4, latest"
-    - BASE_IMAGE="java:9" NIFI_VERSION="0.4.1" TAG_NAMES="0.4.1-openjdk-9"
-    - BASE_IMAGE="airdock/oracle-jdk:1.7" NIFI_VERSION="0.4.1" TAG_NAMES="0.4.1-oracle-java7"
-    - BASE_IMAGE="airdock/oracle-jdk:1.8" NIFI_VERSION="0.4.1" TAG_NAMES="0.4.1-oracle-java8"
+    - TEMPLATE_FILE="templates/Dockerfile-template" BASE_IMAGE="java:8" GIT_TAG_NAME="nifi-0.5.1" DOCKER_TAGS="0.5.0-openjdk-8,latest"
+script: make_docker.py --repository mkobit/nifi --no-docker-build --no-docker-push
