@@ -12,7 +12,8 @@ logger = logging.getLogger('make_docker')
 def template_properties(arg):
   props = arg.split(',')
   if not props:
-    raise argparse.ArgumentTypeError('Template properties must be comma separated')
+    raise argparse.ArgumentTypeError('Template properties must be' \
+      + ' comma separated')
   substitutions = dict()
   for prop in props:
     prop_split = prop.split('=')
@@ -27,24 +28,46 @@ def template_properties(arg):
                             substitutions, props))
   return substitutions
 
+def docker_tags(arg):
+  tags = arg.split(',')
+  if not tags:
+    raise argparse.ArgumentTypeError('Must be at least 1 tag. Tags are' \
+      + ' separated by commas')
+  return tags
+
 def write_template(template_file, substitions, destination_file):
   logger.info('Reading from template_file={}'.format(template_file.name))
   template = string.Template(template_file.read())
-  logger.info('Substitutions for template={}'.format(substitions))
+  logger.info('Template substitutions={}'.format(substitions))
   content = template.substitute(substitions)
   logger.info('Writing to destination_file={}'.format(destination_file.name))
   destination_file.write(content)
 
 def generate(args):
   logger.info('Beginning "generate" phase')
+  substitutions = args.template_substitutions
   with args.template_file as template_file, \
       args.destination_file as destination_file:
-    write_template(template_file, args.template_substitutions, destination_file)
+    write_template(template_file, substitutions, destination_file)
   logger.info('Ending "generate" phase')
 
 def build(args):
   generate(args)
   logger.info('Beginning "build" phase')
+  filename = args.destination_file.name
+  tags = args.tags
+  repository = args.repository
+  logger.info('Building dockerfile={} for repository={} with tags={}'.format(
+    filename, repository, tags))
+  docker_tags = map(lambda t: '{repo}:{tag}'.format(repo=repository, tag=t),
+    tags)
+  tag_args = []
+  for docker_tag in docker_tags:
+    tag_args.extend(['--tag', docker_tag])
+  args = ['docker', 'build', ] + tag_args + ['--file', filename, '.']
+  logger.info('Running subprocess with args={}'.format(args))
+  subprocess.run(args, check=True)
+  # TODO: redirect subprocess output to logger
   logger.info('Ending "build" phase')
 
 def push(args):
@@ -68,14 +91,16 @@ def add_generate_arguments(argument_group):
     required=True)
 
 def add_build_arguments(argument_group):
-  pass
+  argument_group.add_argument('-r', '--repository', type=str, required=True,
+    help='Repository to push results to')
+  argument_group.add_argument('--tags', type=docker_tags, required=True,
+    help='Comma separated list of tags for the images')
 
 def add_push_arguments(argument_group):
   pass
 
 if __name__ == '__main__':
-  parser = argparse.ArgumentParser(description='Generate and build NiFi' \
-    + 'docker image')
+  parser = argparse.ArgumentParser(description='Publish NiFi docker images')
   parser.add_argument('--loggingLevel', choices=['DEBUG', 'INFO',
                       'WARNING', 'ERROR', 'CRITICAL'], default='INFO',
                       help='Logging level to use')
@@ -100,9 +125,6 @@ if __name__ == '__main__':
   docker_arguments = push_parser.add_argument_group('Docker arguments')
   add_build_arguments(docker_arguments)
   add_push_arguments(docker_arguments)
-
-  # docker_args.add_argument('-r', '--repository', type=str, required=True,
-  #   help='Repository to push results to')
 
   args = parser.parse_args()
   logger.setLevel(args.loggingLevel)

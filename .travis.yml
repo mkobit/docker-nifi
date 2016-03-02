@@ -5,6 +5,8 @@ sudo: "required"
 services:
   - docker
 env:
+  global:
+    - DOCKER_REPOSITORY="mkobit/nifi"
   matrix:
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
@@ -23,7 +25,8 @@ env:
 before_script: ./make_docker.py -h
 script: >-
   ./make_docker.py push
-  --repository mkobit/nifi
   --template-file $TEMPLATE_FILE
   --template-substitutions $TEMPLATE_VALUES
   --destination-file $DESTINATION
+  --repository $DOCKER_REPOSITORY
+  --tags $DOCKER_TAGS
