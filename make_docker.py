@@ -52,7 +52,7 @@ def push(args):
   logger.info('Beginning "push" phase')
   logger.info('Ending "push" phase')
 
-def add_generate_arguments(parser, argument_group):
+def add_generate_arguments(argument_group):
   argument_group.add_argument('--template-substitutions',
     type=template_properties,
     help='The template substitutions. Each substitution is a' \
@@ -67,10 +67,10 @@ def add_generate_arguments(parser, argument_group):
     encoding='UTF-8'), help='Destination of rendered template file',
     required=True)
 
-def add_build_arguments(parser, argument_group):
+def add_build_arguments(argument_group):
   pass
 
-def add_push_arguments(parser, argument_group):
+def add_push_arguments(argument_group):
   pass
 
 if __name__ == '__main__':
@@ -84,25 +84,22 @@ if __name__ == '__main__':
     + ' stages to be run as well')
   generate_parser = subparsers.add_parser('generate', help='Generate Dockerfile')
   generate_parser.set_defaults(func=generate)
-  add_generate_arguments(generate_parser,
+  add_generate_arguments(
     generate_parser.add_argument_group('Template arguments'))
 
   build_parser = subparsers.add_parser('build', help='Generate and Build' \
     ' Docker Image')
   build_parser.set_defaults(func=build)
-  add_generate_arguments(build_parser,
-    build_parser.add_argument_group('Template arguments'))
-  add_build_arguments(build_parser,
-    build_parser.add_argument_group('Docker arguments'))
+  add_generate_arguments(build_parser.add_argument_group('Template arguments'))
+  add_build_arguments(build_parser.add_argument_group('Docker arguments'))
 
   push_parser = subparsers.add_parser('push', help='Generate, Build, and' \
     + ' Push Docker Image')
   push_parser.set_defaults(func=push)
-  add_generate_arguments(push_parser,
-    push_parser.add_argument_group('Template arguments'))
+  add_generate_arguments(push_parser.add_argument_group('Template arguments'))
   docker_arguments = push_parser.add_argument_group('Docker arguments')
-  add_build_arguments(push_parser, docker_arguments)
-  add_push_arguments(push_parser, docker_arguments)
+  add_build_arguments(docker_arguments)
+  add_push_arguments(docker_arguments)
 
   # docker_args.add_argument('-r', '--repository', type=str, required=True,
   #   help='Repository to push results to')
