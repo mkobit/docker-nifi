@@ -7,6 +7,7 @@ services:
 env:
   global:
     - DOCKER_REPOSITORY="mkobit/nifi"
+    - DOCKER_USERNAME="mkobit"
   matrix:
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
@@ -30,3 +31,6 @@ script: >-
   --destination-file $DESTINATION
   --repository $DOCKER_REPOSITORY
   --tags $DOCKER_TAGS
+  --username $DOCKER_USERNAME
+  --email $DOCKER_EMAIL
+  --password $DOCKER_PASSWORD

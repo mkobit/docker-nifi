@@ -73,6 +73,8 @@ def build(args):
 def push(args):
   build(args)
   logger.info('Beginning "push" phase')
+  logger.info('Print secure variables: {}, {}, {}'.format(args.username,
+    args.password, args.email))
   logger.info('Ending "push" phase')
 
 def add_generate_arguments(argument_group):
@@ -83,7 +85,7 @@ def add_generate_arguments(argument_group):
     + ' substitution is separated by a comma. For example, a' \
     + ' valid parameter would be "key1=value1,key2=value2"',
     required=True)
-  argument_group.add_argument('-tmpl', '--template-file',
+  argument_group.add_argument('--template-file',
     type=argparse.FileType('r', encoding='UTF-8'),
     help='The template file', required=True)
   argument_group.add_argument('--destination-file', type=argparse.FileType('w',
@@ -91,13 +93,18 @@ def add_generate_arguments(argument_group):
     required=True)
 
 def add_build_arguments(argument_group):
-  argument_group.add_argument('-r', '--repository', type=str, required=True,
+  argument_group.add_argument('--repository', type=str, required=True,
     help='Repository to push results to')
   argument_group.add_argument('--tags', type=docker_tags, required=True,
     help='Comma separated list of tags for the images')
 
 def add_push_arguments(argument_group):
-  pass
+  argument_group.add_argument('--username', type=str, required=True,
+    help='Docker Hub username')
+  argument_group.add_argument('--password', type=str, required=True,
+    help='Docker Hub password')
+  argument_group.add_argument('--email', type=str, required=True,
+    help='Docker Hub email')
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser(description='Publish NiFi docker images')
