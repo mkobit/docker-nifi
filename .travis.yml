@@ -27,7 +27,7 @@ env:
       DESTINATION="0.5.1-openjdk-8"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
-      BASE_IMAGE="java:8"
+      BASE_IMAGE="java:9"
       GIT_TAG_NAME="nifi-0.5.1"
       DOCKER_TAGS="0.5.1-openjdk-9"
       TEMPLATE_VALUES="base_image=java:9,nifi_version=0.5.1"
