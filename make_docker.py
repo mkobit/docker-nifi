@@ -78,6 +78,7 @@ def push(args):
   email = args.email
   tags = args.tags
   repository = args.repository
+  dont_push = args.no_push
   # TODO: reduce code duplication for generating tags here
   docker_tags = map(lambda t: '{repo}:{tag}'.format(repo=repository, tag=t),
     tags)
@@ -87,15 +88,20 @@ def push(args):
   login_args = ['docker', 'login', '--email', email, '--username', username,
     '--password', password]
 
-  # subprocess.run(login_args, check=True)
-  for docker_tag in docker_tags:
-    push_args = ['docker', 'push', docker_tag]
-    logger.info('Pushing docker image={}'.format(docker_tag))
-    # subprocess.run(push_args, check=True)
-  #TODO remove env
-  subprocess.run('env', check=True)
-  #TODO: This will fail now, I want to see if the command is printed to STDOUT
+  # TODO: remove login here
   subprocess.run(login_args, check=True)
+  if dont_push:
+    logger.info('Skipping login. Not pushing built images.')
+  else:
+    logger.info('Executing "docker login" with username={}'.format(username))
+    subprocess.run(login_args, check=True)
+  for docker_tag in docker_tags:
+    if dont_push:
+      logger.info('Skipping push of docker image={}'.format(docker_tag))
+    else:
+      logger.info('Pushing docker image={}'.format(docker_tag))
+      push_args = ['docker', 'push', docker_tag]
+      subprocess.run(push_args, check=True)
   logger.info('Ending "push" phase')
 
 def add_generate_arguments(argument_group):
@@ -126,6 +132,8 @@ def add_push_arguments(argument_group):
     help='Docker Hub password')
   argument_group.add_argument('--email', type=str, required=True,
     help='Docker Hub email')
+  argument_group.add_argument('--no-push', action='store_true',
+    help='Does not push the built images to the remote')
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser(description='Publish NiFi docker images')
