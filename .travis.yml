@@ -8,12 +8,13 @@ env:
   global:
     - DOCKER_REPOSITORY="mkobit/nifi"
     - DOCKER_USERNAME="mkobit"
+    - secure: "SLJEm9dV/ft+G2s+8rlSoRZ6XWZ7owNDioqDPnuxavXuxLtlvgXP6yheSwEDHpn73zitzwNWxgcAiC3DQhTXKb489DwHXI9R/+Ksc+YHLky0hgPLP+WCJwIvfVrRXlqYytvhQWR6Mh7JlhW2dUVIP3SI9I1POxRL3Eb3tcnKMAMqBTLw1KVMeOM881oX67akDCkANyJz66NqaOh2Nh9lsddNPszuM536erpfNvjd1XUB2GawT1VcDc3X3jpTKkWB2I+3xQspgMi63cNBsC3ZRmNXu4gSj9Xfmyd3qm5iZ8iblHa3f2uYNpGmfTLxxAmzcLZy8FhuT++z1AoL3lTTX58hDtb7pfvABRwwRqwP1Vep3vQsSOuKAwk3BCH/EpcF0AEJn/rs40YyYcbpX4TyXYNh25+cDezXf+/k/HKC2udcDJ2PIaNPnfwiRprcFcHcRUdBrYTwwX4f3YpAp5uWH2CbqFwuqT5FN2a20j2ibLksK93LzuDE7qWyB/IGw1SCrFw5t+danjI3W9qlxpKUGSHmUfCo5YLt2aHKrHaWKtW1Wy0LbwVDizkouYI/ieMZBueH/pgArwmymTe0UltX7cUsJEVarP4JkXo/EVE2Dd0cR202kGZEk1oAvn+YSoLoQkMwA6MCFsKDTuYSH48xKNvNNc6tdj+BMZaRzF/8fsU="
   matrix:
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
       BASE_IMAGE="java:7"
       GIT_TAG_NAME="nifi-0.5.1"
-      DOCKER_TAGS="0.5.1-openjdk-7,latest"
+      DOCKER_TAGS="0.5.1-openjdk-7"
       TEMPLATE_VALUES="base_image=java:7,nifi_version=0.5.1"
       DESTINATION="0.5.1-openjdk-7"
     - >-
@@ -23,6 +24,13 @@ env:
       DOCKER_TAGS="0.5.1-openjdk-8,latest"
       TEMPLATE_VALUES="base_image=java:8,nifi_version=0.5.1"
       DESTINATION="0.5.1-openjdk-8"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      BASE_IMAGE="java:8"
+      GIT_TAG_NAME="nifi-0.5.1"
+      DOCKER_TAGS="0.5.1-openjdk-9"
+      TEMPLATE_VALUES="base_image=java:9,nifi_version=0.5.1"
+      DESTINATION="0.5.1-openjdk-9"
 before_script: ./make_docker.py -h
 script: >-
   ./make_docker.py push

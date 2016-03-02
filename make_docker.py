@@ -73,8 +73,29 @@ def build(args):
 def push(args):
   build(args)
   logger.info('Beginning "push" phase')
+  username = args.username
+  password = args.password
+  email = args.email
+  tags = args.tags
+  repository = args.repository
+  # TODO: reduce code duplication for generating tags here
+  docker_tags = map(lambda t: '{repo}:{tag}'.format(repo=repository, tag=t),
+    tags)
   logger.info('Print secure variables: {}, {}, {}'.format(args.username,
     args.password, args.email))
+  logger.info('Logging into Docker')
+  login_args = ['docker', 'login', '--email', email, '--username', username,
+    '--password', password]
+
+  # subprocess.run(login_args, check=True)
+  for docker_tag in docker_tags:
+    push_args = ['docker', 'push' docker_tag]
+    logger.info('Pushing docker image={}'.format(docker_tag))
+    # subprocess.run(push_args, check=True)
+  #TODO remove env
+  subprocess.run('env', check=True)
+  #TODO: This will fail now, I want to see if the command is printed to STDOUT
+  subprocess.run(login_args, check=True)
   logger.info('Ending "push" phase')
 
 def add_generate_arguments(argument_group):
