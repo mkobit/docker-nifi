@@ -89,12 +89,15 @@ def push(args):
     '--password', password]
 
   # TODO: remove login here
-  subprocess.run(login_args, check=True)
+  completed_process = subprocess.run(login_args, check=False)
   if dont_push:
     logger.info('Skipping login. Not pushing built images.')
   else:
     logger.info('Executing "docker login" with username={}'.format(username))
-    subprocess.run(login_args, check=True)
+    completed_process = subprocess.run(login_args, check=False)
+    if completed_process.returncode != 0:
+      raise RuntimeError('Error running docker login. Return code={}'.format(
+        completed_process.returncode))
   for docker_tag in docker_tags:
     if dont_push:
       logger.info('Skipping push of docker image={}'.format(docker_tag))
