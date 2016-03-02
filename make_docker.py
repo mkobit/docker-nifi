@@ -82,12 +82,9 @@ def push(args):
   # TODO: reduce code duplication for generating tags here
   docker_tags = map(lambda t: '{repo}:{tag}'.format(repo=repository, tag=t),
     tags)
-  logger.info('Print secure variables: {}, {}, {}'.format(args.username,
-    args.password, args.email))
-  logger.info('Logging into Docker')
-  login_args = ['docker', 'login', '--email', email, '--username', username,
-    '--password', password]
 
+  login_args = ['docker', 'login', '--email', email, '--username', username,
+  '--password', password]
   # TODO: remove login here
   completed_process = subprocess.run(login_args, check=False)
   if dont_push:

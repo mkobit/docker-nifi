@@ -8,8 +8,8 @@ env:
   global:
     - DOCKER_REPOSITORY="mkobit/nifi"
     - DOCKER_USERNAME="mkobit"
-    - secure: "mmlHOw5CqZOuRkFXSx9yq75RtoM7T4bHxZ29q4YHVWyGF8uLPNsq2vS3tLiXEHxb+3XfWopd+bdn35Wh1nZQXptLEFQA2XLM7TDBLd7FR4kGLue3SGAy0iRUD4WVOcCVF0YDYvYNhKacZMVLdY/J4zoKXIU8m6bUzzpI1x8TjkuQ8sXVSWvCyPrVn8173sMFVS4B7qhe/Gwk/wHVj7h8pWf8PtfHwkh+4dEHchhVBHm7k2vn24iyd2pJ4EM/TVBYjoKNHiQk0382FoBa4mYyIFXrrmPRUij2O18nM5czPyw/wpMwCFUfpQFeuERCxhhfwU0dU6btT1uuzLqwvHq2PlNEfW/INbE3nUfvUw18dxHmmXNqFDD2OylcXdRsumedG3pwWe3ZgK9RQTk0Dq1FzFUngjSG2lJX75yhxIhlH/2Bp0879Y75uGYpXguryI35jRYDGSOW/1iPI4L/VlUCexRVv1sTrfASfytCgrdm2Ak55TWvzG6op+Ps+JJrdE5uHHkJM1wBlKmCBGLQ8UQjxg85D9uBWwq3maXX+vg8lhW7DcN/QbKT+TjCfVq9rS1DtGl0EIIGN2sM7yUkOEGOEIjxnKtHXhyK0LVf7mQUuR59DnkxO/fglIHIDct2xkbP3IRokrEwgat2AHB58+XWE52XUi2UNVT52vv09uwHEf8="
-    - secure: "OMGKm+fFnMih9egqLMGxYRiINp2dYTde2t7K4VZxKz5ZMsBI42KZvQ3j3/MTr8LB+Dbj1h44/rx/Fs+MflV/MvmTPWI5BMSZ3OVVdwA6nSdpt+sX4rZtGtys6a5WboI8kV8Jt6kZUMuYH51tz2dxy5iON6ady0aEDOuDwye2zjJ7B8m4nucQJ9skhYJGAmpz3CLR0IrAveiVZq9neZDpXlqTtzi230O1Yz2a/RzBzeaI4tutXbs5ewyhZCpxpvJ4YzNwbAhJNPD2+it5VGhJxUVaRfPs/h/yORwV1yvzko6Y2dsYWv7TAW5KUPfq8RY/1/Hjz4O54WuTsMVPT5+ZUhvuQ7xuUs8JvhSlAZsMUy1mcmQXY3GrVoI0+XZST2XIsPekSRlfLZrLOCPDYFBWlRmQfg/fYogujVyFWctj/D7DzrXLuVh5AZRrMwsotfcl0C1Vcgl12DiAEx3dh8m+aLwvLHJDMcygeyqhknMzRnLTIaAyxt8Uwn1nMNZokc/jZJHfGDHGhOPZ24AbvS0Ttp07FJCYGWwKxEDuE7nEG54UQj4G0UTe9LuxgQr4EY1krbKgH148+/VBy4eCGypqEnUu25MCP4wh+w6PrcGqBVziUvg2C8axYMM8h6+kyelxpVQvk92y74A+1FMldiKMvzZkUDKQbuKwinQwViwjWxo="
+    - secure: "lhsq4H1nc5LOLmbLvs4qLBt+M93ESP9DOAszog0X3RJSNyfIN/9FqxL8Qnac846UDmrP7hqNNqydUY9FE0H/hjhFBzor4IxQxYUY6Petm6HQOV3tQ0/H0QGlFC4BIqtqZiQwv/U6rKivJAhGa51YF5Y2LrNGSq0bziB3yVOG1K130LP+rxv/sWwSdfUkjzHF4i0+m9pkSIz/FZbO2lGajYKArN6YEE/mcMAdTere6zq4/m9Rxnymw3vWqxaX+1SQoBiDC2YL5vBMvorNE/pqvttqD01vhovMUKHEhXD1iARDFr9wrNK2PbLcAAIEq5pj5BZF8wKfFap9F5rjWYmAF4PlSmiZBbA9n6Bd1rMC1qU8Y6t3SKUdo5cFCeNWz21mpt4J2bw0h86cBCkbDVGf9gauo2iCxi6CiYy7csyc2W4D3xXe0LqJoGLci524Sp7TXt6C/EVrxgS2H084YnWzVWiLu/KjWb1MhjjV4yJuXdKc4QKQGIWltudlJzZCVzp8ipNmnJ9umGFbHL8quehCLyhDA7IGGVjWmFG7WLWJppNft7Ls7Jxjx4waqvuw2TWiyuYTsWUT5em2vJjW79+wS1FJ3HQtcypXnFaUw6o/W9G9G992rm851xdiuNY/yx6UqeyppOaD/MI5RX94OaX219Gv90VzBUgsqbeMECAA+tA="
+    - secure: "ae4Me5T1z79+uJIUAyQdY3t5gJsRSr0FGCN98w5m1qNOnuz3IJ9XToIGbBlgswHkML7iLWzuaWJK4Dzxm6CWCUK0+UOLUdorQ6WJtjMnhpE0fO0z9/xZ2MeppwQ/FTn/RaXel2LVM3e50IkH7NT16ENdP5nhqqWokFzPotyS48wFpLIGtmOJD7kC2fMGerQ3uaN5IGOVPpguWM0bNkLYtic2nPRzuQbEL13BJfxVVQGRLUSp3IgM/mUioT0hWoZfCCuvc8bfYWX4V1KGyzBFgbvwjLwkw4KXIPt0nKEzfUTYvhS2kl+8ZTmOlHdYiRSXy82+KAAQSUPcf1oBIJgKqyYVf0oyZcWWsBXHAKDDAL+KklZrrmeEyRS3CIzWsLqJDQrQJd81OeDxKxQH0r4NtxmoybgFO9BiEngPseWK3I3bRR3ZDnjy4aJ/1TNy9fT8XdTdzXfx6kZwcYqdeNsqRWu/YjZAPGLQlieaOLGQduydX4E3PY+b4SlhL9+5HW3lvj/hu9VqUxCbrsgzc7dKZQKfiSGPNFuLMHSMoTtdmfBhkybXd7MPob5B+R3ec6t+KLDT2PUY9tVqO3nmNiCF3GxgnIgEWmOBO+u2s/IpgHwVo/hYbwtoL/sYON7wcTiiOO8oUcwJkvQmiqKxK475kjoCgn91dFXoessL+ZizWS4="
   matrix:
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
@@ -32,15 +32,14 @@ env:
       DOCKER_TAGS="0.5.1-openjdk-9"
       TEMPLATE_VALUES="base_image=java:9,nifi_version=0.5.1"
       DESTINATION="0.5.1-openjdk-9"
-before_script: ./make_docker.py -h
 script: >-
   ./make_docker.py push
-  --template-file $TEMPLATE_FILE
-  --template-substitutions $TEMPLATE_VALUES
-  --destination-file $DESTINATION
-  --repository $DOCKER_REPOSITORY
-  --tags $DOCKER_TAGS
-  --username $DOCKER_USERNAME
-  --email $DOCKER_EMAIL
-  --password $DOCKER_PASSWORD
+  --template-file "${TEMPLATE_FILE}"
+  --template-substitutions "${TEMPLATE_VALUES}"
+  --destination-file "${DESTINATION}"
+  --repository "${DOCKER_REPOSITORY}"
+  --tags "${DOCKER_TAGS}"
+  --username "${DOCKER_USERNAME}"
+  --email "${DOCKER_EMAIL}"
+  --password "${DOCKER_PASSWORD}"
   --no-push
