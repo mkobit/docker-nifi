@@ -24,8 +24,8 @@ before_script: ./make_docker.py -h
 script: >-
   ./make_docker.py
   --repository mkobit/nifi
-  --templateFile $TEMPLATE_FILE
-  --templateSubstitutions $TEMPLATE_VALUES
-  --destinationFile $DESTINATION
+  --template-file $TEMPLATE_FILE
+  --template-substitutions $TEMPLATE_VALUES
+  --destination-file $DESTINATION
   --no-docker-build
   --no-docker-push

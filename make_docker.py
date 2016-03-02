@@ -26,38 +26,36 @@ def template_properties(arg):
                             substitutions, props))
   return substitutions
 
-def write_template(templateFile, substitions, destinationFile):
-  logger.info('Reading from templateFile={}'.format(templateFile.name))
-  template = string.Template(templateFile.read())
-  logger.info('Substitutions for template={}'.format(
-              args.templateSubstitutions))
-  content = template.substitute(args.templateSubstitutions)
-  logger.info('Writing to destinationFile={}'.format(destinationFile.name))
-  destinationFile.write(content)
+def write_template(template_file, substitions, destination_file):
+  logger.info('Reading from template_file={}'.format(template_file.name))
+  template = string.Template(template_file.read())
+  logger.info('Substitutions for template={}'.format(substitions))
+  content = template.substitute(substitions)
+  logger.info('Writing to destination_file={}'.format(destination_file.name))
+  destination_file.write(content)
 
 def main(args):
-  logger.debug('Starting make_docker.py with args="{}"'.format(args))
-  with args.templateFile as templateFile, \
-        args.destinationFile as destinationFile:
-    write_template(templateFile, args.templateSubstitutions, destinationFile)
-  
+  logger.info('Starting make_docker.py with args="{}"'.format(args))
+  with args.template_file as template_file, \
+        args.destination_file as destination_file:
+    write_template(template_file, args.template_substitutions, destination_file)
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser(description='Generate and build NiFi' \
     + 'docker image')
   template_args = parser.add_argument_group('template arguments')
-  template_args.add_argument('--templateSubstitutions',
+  template_args.add_argument('--template-substitutions',
                     type=template_properties,
                     help='The template substitutions. Each substitution is a' \
                     + ' key and value separated by an equal sign. Each' \
                     + ' substitution is separated by a comma. For example, a' \
                     + ' valid parameter would be "key1=value1,key2=value2"',
                     required=True)
-  template_args.add_argument('-tpl', '--templateFile',
+  template_args.add_argument('-tmpl', '--template-file',
                     type=argparse.FileType('r', encoding='UTF-8'),
                     help='The template file', required=True)
   docker_args = parser.add_argument_group('Docker arguments')
-  docker_args.add_argument('--destinationFile', type=argparse.FileType('w',
+  docker_args.add_argument('--destination-file', type=argparse.FileType('w',
                     encoding='UTF-8'), help='Destination of templated' \
                     + ' dockerfile', required=True)
   docker_args.add_argument('--no-docker-build', action='store_true',
