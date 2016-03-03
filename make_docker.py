@@ -83,13 +83,11 @@ def push(args):
   docker_tags = map(lambda t: '{repo}:{tag}'.format(repo=repository, tag=t),
     tags)
 
-  login_args = ['docker', 'login', '--email', email, '--username', username,
-  '--password', password]
-  # TODO: remove login here
-  completed_process = subprocess.run(login_args, check=False)
   if dont_push:
     logger.info('Skipping login. Not pushing built images.')
   else:
+    login_args = ['docker', 'login', '--email', email, '--username', username,
+      '--password', password]
     logger.info('Executing "docker login" with username={}'.format(username))
     completed_process = subprocess.run(login_args, check=False)
     if completed_process.returncode != 0:
