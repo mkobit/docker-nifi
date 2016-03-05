@@ -109,6 +109,7 @@ def add_generate_arguments(argument_group):
     + ' key and value separated by an equal sign. Each' \
     + ' substitution is separated by a comma. For example, a' \
     + ' valid parameter would be "key1=value1,key2=value2"',
+    metavar='KEY1=VALUE1,KEY2=VALUE2',
     required=True)
   argument_group.add_argument('--template-file',
     type=argparse.FileType('r', encoding='UTF-8'),
