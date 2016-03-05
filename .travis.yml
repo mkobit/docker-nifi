@@ -29,14 +29,4 @@ env:
       DOCKER_TAGS="0.5.1-openjdk-9"
       TEMPLATE_VALUES="base_image=java:9,nifi_version=0.5.1,git_tag_name=nifi-0.5.1,distribution_url=http://apache.arvixe.com"
       DESTINATION="0.5.1-openjdk-9"
-script: >-
-  ./make_docker.py push
-  --template-file "${TEMPLATE_FILE}"
-  --template-substitutions "${TEMPLATE_VALUES}"
-  --destination-file "${DESTINATION}"
-  --repository "${DOCKER_REPOSITORY}"
-  --tags "${DOCKER_TAGS}"
-  --username "${DOCKER_USERNAME}"
-  --email "${DOCKER_EMAIL}"
-  --password "${DOCKER_PASSWORD}"
-  --no-push
+script: ./travis_build.sh
