@@ -13,20 +13,17 @@ env:
   matrix:
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
-      BASE_IMAGE="java:7"
-      DOCKER_TAGS="0.5.1-openjdk-7"
-      TEMPLATE_VALUES="base_image=java:7,nifi_version=0.5.1,git_tag_name=nifi-0.5.1,distribution_url=http://apache.arvixe.com"
-      DESTINATION="0.5.1-openjdk-7"
+      DOCKER_TAGS="0.5.1-openjdk-9"
+      TEMPLATE_VALUES="base_image=java:9-jre,nifi_version=0.5.1,git_tag_name=nifi-0.5.1,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.1-openjdk-9"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
-      BASE_IMAGE="java:8"
       DOCKER_TAGS="0.5.1-openjdk-8,latest"
-      TEMPLATE_VALUES="base_image=java:8,nifi_version=0.5.1,git_tag_name=nifi-0.5.1,distribution_url=http://apache.arvixe.com"
+      TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.5.1,git_tag_name=nifi-0.5.1,distribution_url=http://apache.arvixe.com"
       DESTINATION="0.5.1-openjdk-8"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
-      BASE_IMAGE="java:9"
-      DOCKER_TAGS="0.5.1-openjdk-9"
-      TEMPLATE_VALUES="base_image=java:9,nifi_version=0.5.1,git_tag_name=nifi-0.5.1,distribution_url=http://apache.arvixe.com"
-      DESTINATION="0.5.1-openjdk-9"
+      DOCKER_TAGS="0.5.1-openjdk-7"
+      TEMPLATE_VALUES="base_image=java:7-jre,nifi_version=0.5.1,git_tag_name=nifi-0.5.1,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.1-openjdk-7"
 script: ./travis_build.sh
