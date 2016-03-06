@@ -1,2 +1,10 @@
 .git/
 .gitignore
+.travis.yml
+build-travis-docker.sh
+Dockerfile-travis-lint
+exec-travis-docker.sh
+LICENSE.txt
+README.md
+README-short.txt
+travis_build.sh
