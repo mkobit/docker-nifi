@@ -1,0 +1,233 @@
+= Docker Apache NiFi
+
+image:https://img.shields.io/badge/license-MIT-blue.svg[
+title="MIT license", alt="MIT License"]
+image:https://travis-ci.org/mkobit/docker-nifi.svg?branch=master[title="Build
+Status", alt="Build Status", link="https://travis-ci.org/mkobit/docker-nifi"]
+image:https://img.shields.io/docker/stars/mkobit/nifi.svg[title="Docker repository stars",
+alt="Stars on Docker Hub", link="https://hub.docker.com/r/mkobit/nifi/"]
+image:https://img.shields.io/docker/pulls/mkobit/nifi.svg[title="Docker image
+pulls", alt="Docker image pulls", link="https://hub.docker.com/r/mkobit/nifi/"]
+image:https://img.shields.io/github/issues/mkobit/docker-nifi.svg[
+title="Github issues", alt="Github issues",
+link="https://github.com/mkobit/docker-nifi/issues"]
+
+
+This is an unofficial https://nifi.apache.org/[Apache NiFi] Docker image. The
+images are built by https://travis-ci.org/mkobit/docker-nifi[Travis CI] and are
+available on https://hub.docker.com/r/mkobit/nifi/[Docker Hub at mkobit/nifi].
+
+:toc:
+
+== Images
+
+[cols=2, options="header"]
+|===
+| Image
+| Image Size (by https://imagelayers.io[imagelayers.io])
+
+| `mkobit/nifi:latest`
+| image:https://badge.imagelayers.io/mkobit/nifi:latest.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:latest"]
+
+| `mkobit/nifi:0.5.1-openjdk-9`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.5.1-openjdk-9.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.5.1-openjdk-9"]
+
+| `mkobit/nifi:0.5.1-openjdk-8`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.5.1-openjdk-8.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.5.1-openjdk-8"]
+
+| `mkobit/nifi:0.5.1-openjdk-7`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.5.1-openjdk-7.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.5.1-openjdk-7"]
+
+| `mkobit/nifi:0.5.1-oracle-java8`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.5.1-oracle-java8.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.5.1-oracle-java8"]
+
+| `mkobit/nifi:0.5.1-oracle-java7`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.5.1-oracle-java7.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.5.1-oracle-java7"]
+
+| `mkobit/nifi:0.5.0-openjdk-9`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.5.0-openjdk-9.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.5.0-openjdk-9"]
+
+| `mkobit/nifi:0.5.0-openjdk-8`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.5.0-openjdk-8.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.5.0-openjdk-8"]
+
+| `mkobit/nifi:0.5.0-openjdk-7`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.5.0-openjdk-7.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.5.0-openjdk-7"]
+
+| `mkobit/nifi:0.5.0-oracle-java8`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.5.0-oracle-java8.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.5.0-oracle-java8"]
+
+| `mkobit/nifi:0.5.0-oracle-java7`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.5.0-oracle-java7.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.5.0-oracle-java7"]
+
+| `mkobit/nifi:0.4.1-openjdk-9`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.4.1-openjdk-9.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.4.1-openjdk-9"]
+
+| `mkobit/nifi:0.4.1-openjdk-8`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.4.1-openjdk-8.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.4.1-openjdk-8"]
+
+| `mkobit/nifi:0.4.1-openjdk-7`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.4.1-openjdk-7.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.4.1-openjdk-7"]
+
+| `mkobit/nifi:0.4.1-oracle-java8`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.4.1-oracle-java8.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.4.1-oracle-java8"]
+
+| `mkobit/nifi:0.4.1-oracle-java7`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.4.1-oracle-java7.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.4.1-oracle-java7"]
+
+| `mkobit/nifi:0.4.0-openjdk-9`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.4.0-openjdk-9.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.4.0-openjdk-9"]
+
+| `mkobit/nifi:0.4.0-openjdk-8`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.4.0-openjdk-8.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.4.0-openjdk-8"]
+
+| `mkobit/nifi:0.4.0-openjdk-7`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.4.0-openjdk-7.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.4.0-openjdk-7"]
+
+| `mkobit/nifi:0.4.0-oracle-java8`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.4.0-oracle-java8.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.4.0-oracle-java8"]
+
+| `mkobit/nifi:0.4.0-oracle-java7`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.4.0-oracle-java7.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.4.0-oracle-java7"]
+
+| `mkobit/nifi:0.3.0`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.3.0.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.3.0"]
+
+| `mkobit/nifi:0.2.1`
+| image:https://badge.imagelayers.io/mkobit/nifi:0.2.1.svg[
+title="Image layers and size", alt="Image layers and size",
+link="https://imagelayers.io/?images=mkobit%2Fnifi:0.2.1"]
+|===
+
+== Example
+
+To try out NiFi on Docker:
+
+. Pull the `latest` image
+
+  [source,console]
+  ----
+  docker pull mkobit/nifi
+  ---
+
+. Run image and expose default ports to host.
+
+  [source,console]
+  ----
+  # --rm : remove container on exit
+  # -i : interactive
+  # -t : allocate TTY
+  # -p : publish each container port to host port. format: ip:hostPort:containerPort | ip::containerPort | hostPort:containerPort | containerPort
+  docker run -it --rm -p 8080-8081:8080-8081 mkobit/nifi
+  ----
+
+. Go to default local NiFi endpoint in browser - [http://localhost:8080/nifi/](http://localhost:8080/nifi/)
+
+== Building Extensions
+
+This can easily be used as a base image to create NiFi applications. One way
+would be to build a https://nifi.apache.org/developer-guide.html[NAR] with
+extensions built upon the framework and including it in your own image. I
+recommend reading the https://nifi.apache.org/developer-guide.html[Developer's
+Guide] if you want to head down this route.
+
+== Volumes
+
+These are the default locations as specified by the Apache NiFi properties.
+You can find more information about each of these repositories on the
+https://nifi.apache.org/docs/nifi-docs/html/administration-guide.html[System
+Administration Guide].
+
+- `$NIFI_HOME/database_repository` - user access and flow controller history
+- `$NIFI_HOME/flowfile_repository` - FlowFile attributes and current state in
+the system
+- `$NIFI_HOME/content_repository` - content for all the FlowFiles in the system
+- `$NIFI_HOME/provenance_repository` - information related to Data Provenance
+
+== Official Apache NiFi Documentation and Guides
+
+- https://nifi.apache.org/docs.html[Overview]
+- https://nifi.apache.org/docs/nifi-docs/html/user-guide.html[User Guide]
+- https://nifi.apache.org/docs/nifi-docs/html/expression-language-guide.html[
+Expression Language]
+- https://nifi.apache.org/quickstart.html[Development Quickstart]
+- https://nifi.apache.org/developer-guide.html[Developer's Guide]
+- https://nifi.apache.org/docs/nifi-docs/html/administration-guide.html[System
+Administrator]
+
+== ListenHTTP Processor
+
+The standard library has a built-in processor for an HTTP endpoint listener.
+That processor is named https://nifi.apache.org/docs/nifi-docs/components/org.apache.nifi.processors.standard.ListenHTTP/index.html[`ListenHTTP`].
+You should set the **Listening Port** of the instantiated processor to `8081`
+if you follow the instructions from above.
+
+== Usage
+
+This image can either be used as a base image for building on top of NiFi or
+just to experiment with. I personally have not attempted to use this in a
+production use case.
+
+== Issues
+
+If you have any problems, comments, or questions with this image, feel free to
+reach out at https://github.com/mkobit/docker-nifi)[mkobit/docker-nifi]. If you
+have Apache NiFi specific questions or concerns you can reach out on one of the
+https://nifi.apache.org/mailing_lists.html[community mailing lists].
+
+== Contributing to this repository
+
+Contributing changes to this repository is extremely welcome. If it is a
+larger change, it is usually best to discuss your plans first. Please see
+the https://github.com/mkobit/docker-nifi/issues[issues] to see if a similar
+issue already exists.
+
+== Contributing to NiFi
+
+The Apache NiFi source code can be found on Github at
+https://github.com/apache/nifi[apache/nifi]. You can browse issues related to
+the project on the https://issues.apache.org/jira/browse/NIFI/[Apache NiFi
+Jira].

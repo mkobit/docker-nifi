@@ -1,0 +1,187 @@
+language: "python"
+python:
+  - "3.5"
+sudo: "required"
+services:
+  - docker
+env:
+  global:
+    - DOCKER_REPOSITORY="mkobit/nifi"
+    - DOCKER_USERNAME="mkobit"
+    - secure: "lhsq4H1nc5LOLmbLvs4qLBt+M93ESP9DOAszog0X3RJSNyfIN/9FqxL8Qnac846UDmrP7hqNNqydUY9FE0H/hjhFBzor4IxQxYUY6Petm6HQOV3tQ0/H0QGlFC4BIqtqZiQwv/U6rKivJAhGa51YF5Y2LrNGSq0bziB3yVOG1K130LP+rxv/sWwSdfUkjzHF4i0+m9pkSIz/FZbO2lGajYKArN6YEE/mcMAdTere6zq4/m9Rxnymw3vWqxaX+1SQoBiDC2YL5vBMvorNE/pqvttqD01vhovMUKHEhXD1iARDFr9wrNK2PbLcAAIEq5pj5BZF8wKfFap9F5rjWYmAF4PlSmiZBbA9n6Bd1rMC1qU8Y6t3SKUdo5cFCeNWz21mpt4J2bw0h86cBCkbDVGf9gauo2iCxi6CiYy7csyc2W4D3xXe0LqJoGLci524Sp7TXt6C/EVrxgS2H084YnWzVWiLu/KjWb1MhjjV4yJuXdKc4QKQGIWltudlJzZCVzp8ipNmnJ9umGFbHL8quehCLyhDA7IGGVjWmFG7WLWJppNft7Ls7Jxjx4waqvuw2TWiyuYTsWUT5em2vJjW79+wS1FJ3HQtcypXnFaUw6o/W9G9G992rm851xdiuNY/yx6UqeyppOaD/MI5RX94OaX219Gv90VzBUgsqbeMECAA+tA="
+    - secure: "ae4Me5T1z79+uJIUAyQdY3t5gJsRSr0FGCN98w5m1qNOnuz3IJ9XToIGbBlgswHkML7iLWzuaWJK4Dzxm6CWCUK0+UOLUdorQ6WJtjMnhpE0fO0z9/xZ2MeppwQ/FTn/RaXel2LVM3e50IkH7NT16ENdP5nhqqWokFzPotyS48wFpLIGtmOJD7kC2fMGerQ3uaN5IGOVPpguWM0bNkLYtic2nPRzuQbEL13BJfxVVQGRLUSp3IgM/mUioT0hWoZfCCuvc8bfYWX4V1KGyzBFgbvwjLwkw4KXIPt0nKEzfUTYvhS2kl+8ZTmOlHdYiRSXy82+KAAQSUPcf1oBIJgKqyYVf0oyZcWWsBXHAKDDAL+KklZrrmeEyRS3CIzWsLqJDQrQJd81OeDxKxQH0r4NtxmoybgFO9BiEngPseWK3I3bRR3ZDnjy4aJ/1TNy9fT8XdTdzXfx6kZwcYqdeNsqRWu/YjZAPGLQlieaOLGQduydX4E3PY+b4SlhL9+5HW3lvj/hu9VqUxCbrsgzc7dKZQKfiSGPNFuLMHSMoTtdmfBhkybXd7MPob5B+R3ec6t+KLDT2PUY9tVqO3nmNiCF3GxgnIgEWmOBO+u2s/IpgHwVo/hYbwtoL/sYON7wcTiiOO8oUcwJkvQmiqKxK475kjoCgn91dFXoessL+ZizWS4="
+  matrix:
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.5.1-openjdk-9"
+      TEMPLATE_VALUES="base_image=java:9-jre,nifi_version=0.5.1,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.1-openjdk-9.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.5.1-openjdk-8,latest"
+      TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.5.1,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.1-openjdk-8.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.5.1-openjdk-7"
+      TEMPLATE_VALUES="base_image=java:7-jre,nifi_version=0.5.1,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.1-openjdk-7.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.5.1-oracle-java8"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=0.5.1,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.1-oracle-java8.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.5.1-oracle-java7"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.7,nifi_version=0.5.1,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.1-oracle-java7.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.5.0-openjdk-9"
+      TEMPLATE_VALUES="base_image=java:9-jre,nifi_version=0.5.0,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.0-openjdk-9.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.5.0-openjdk-8,latest"
+      TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.5.0,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.0-openjdk-8.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.5.0-openjdk-7"
+      TEMPLATE_VALUES="base_image=java:7-jre,nifi_version=0.5.0,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.0-openjdk-7.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.5.0-oracle-java8"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=0.5.0,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.0-oracle-java8.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.5.0-oracle-java7"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.7,nifi_version=0.5.0,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.0-oracle-java7.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.1-openjdk-9"
+      TEMPLATE_VALUES="base_image=java:9-jre,nifi_version=0.4.1,distribution_url=http://apache.mirrors.pair.com"
+      DESTINATION="0.4.1-openjdk-9.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.1-openjdk-8,latest"
+      TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.4.1,distribution_url=http://apache.mirrors.pair.com"
+      DESTINATION="0.4.1-openjdk-8.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.1-openjdk-7"
+      TEMPLATE_VALUES="base_image=java:7-jre,nifi_version=0.4.1,distribution_url=http://apache.mirrors.pair.com"
+      DESTINATION="0.4.1-openjdk-7.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.1-oracle-java8"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=0.4.1,distribution_url=http://apache.mirrors.pair.com"
+      DESTINATION="0.4.1-oracle-java8.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.1-oracle-java7"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.7,nifi_version=0.4.1,distribution_url=http://apache.mirrors.pair.com"
+      DESTINATION="0.4.1-oracle-java7.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.0-openjdk-9"
+      TEMPLATE_VALUES="base_image=java:9-jre,nifi_version=0.4.0,distribution_url=http://apache.claz.org"
+      DESTINATION="0.4.0-openjdk-9.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.0-openjdk-8,latest"
+      TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.4.0,distribution_url=http://apache.claz.org"
+      DESTINATION="0.4.0-openjdk-8.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.0-openjdk-7"
+      TEMPLATE_VALUES="base_image=java:7-jre,nifi_version=0.4.0,distribution_url=http://apache.claz.org"
+      DESTINATION="0.4.0-openjdk-7.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.0-oracle-java8"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=0.4.0,distribution_url=http://apache.claz.org"
+      DESTINATION="0.4.0-oracle-java8.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.0-oracle-java7"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.7,nifi_version=0.4.0,distribution_url=http://apache.claz.org"
+      DESTINATION="0.4.0-oracle-java7.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.3.0"
+      TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.3.0,distribution_url=http://mirrors.sonic.net/apache"
+      DESTINATION="0.3.0.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.2.1"
+      TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.3.0,distribution_url=http://mirrors.sonic.net/apache"
+      DESTINATION="0.2.1.dockerfile"
+matrix:
+  exclude:
+    # Use the full "env" string for exclusion.
+    - env: >-
+        TEMPLATE_FILE="templates/Dockerfile-template"
+        DOCKER_TAGS="0.4.1-openjdk-9"
+        TEMPLATE_VALUES="base_image=java:9-jre,nifi_version=0.4.1,distribution_url=http://apache.mirrors.pair.com"
+        DESTINATION="0.4.1-openjdk-9.dockerfile"
+    - env: >-
+        TEMPLATE_FILE="templates/Dockerfile-template"
+        DOCKER_TAGS="0.4.1-openjdk-8,latest"
+        TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.4.1,distribution_url=http://apache.mirrors.pair.com"
+        DESTINATION="0.4.1-openjdk-8.dockerfile"
+    - env: >-
+        TEMPLATE_FILE="templates/Dockerfile-template"
+        DOCKER_TAGS="0.4.1-openjdk-7"
+        TEMPLATE_VALUES="base_image=java:7-jre,nifi_version=0.4.1,distribution_url=http://apache.mirrors.pair.com"
+        DESTINATION="0.4.1-openjdk-7.dockerfile"
+    - env: >-
+        TEMPLATE_FILE="templates/Dockerfile-template"
+        DOCKER_TAGS="0.4.1-oracle-java8"
+        TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=0.4.1,distribution_url=http://apache.mirrors.pair.com"
+        DESTINATION="0.4.1-oracle-java8.dockerfile"
+    - env: >-
+        TEMPLATE_FILE="templates/Dockerfile-template"
+        DOCKER_TAGS="0.4.1-oracle-java7"
+        TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.7,nifi_version=0.4.1,distribution_url=http://apache.mirrors.pair.com"
+        DESTINATION="0.4.1-oracle-java7.dockerfile"
+    - env: >-
+        TEMPLATE_FILE="templates/Dockerfile-template"
+        DOCKER_TAGS="0.4.0-openjdk-9"
+        TEMPLATE_VALUES="base_image=java:9-jre,nifi_version=0.4.0,distribution_url=http://apache.claz.org"
+        DESTINATION="0.4.0-openjdk-9.dockerfile"
+    - env: >-
+        TEMPLATE_FILE="templates/Dockerfile-template"
+        DOCKER_TAGS="0.4.0-openjdk-8,latest"
+        TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.4.0,distribution_url=http://apache.claz.org"
+        DESTINATION="0.4.0-openjdk-8.dockerfile"
+    - env: >-
+        TEMPLATE_FILE="templates/Dockerfile-template"
+        DOCKER_TAGS="0.4.0-openjdk-7"
+        TEMPLATE_VALUES="base_image=java:7-jre,nifi_version=0.4.0,distribution_url=http://apache.claz.org"
+        DESTINATION="0.4.0-openjdk-7.dockerfile"
+    - env: >-
+        TEMPLATE_FILE="templates/Dockerfile-template"
+        DOCKER_TAGS="0.4.0-oracle-java8"
+        TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=0.4.0,distribution_url=http://apache.claz.org"
+        DESTINATION="0.4.0-oracle-java8.dockerfile"
+    - env: >-
+        TEMPLATE_FILE="templates/Dockerfile-template"
+        DOCKER_TAGS="0.4.0-oracle-java7"
+        TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.7,nifi_version=0.4.0,distribution_url=http://apache.claz.org"
+        DESTINATION="0.4.0-oracle-java7.dockerfile"
+    - env: >-
+        TEMPLATE_FILE="templates/Dockerfile-template"
+        DOCKER_TAGS="0.3.0"
+        TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.3.0,distribution_url=http://mirrors.sonic.net/apache"
+        DESTINATION="0.3.0.dockerfile"
+    - env: >-
+        TEMPLATE_FILE="templates/Dockerfile-template"
+        DOCKER_TAGS="0.2.1"
+        TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.3.0,distribution_url=http://mirrors.sonic.net/apache"
+        DESTINATION="0.2.1.dockerfile"
+script: ./travis_build.sh
