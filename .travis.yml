@@ -36,4 +36,79 @@ env:
       DOCKER_TAGS="0.5.1-oracle-java7"
       TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.7,nifi_version=0.5.1,git_tag_name=nifi-0.5.1,distribution_url=http://apache.arvixe.com"
       DESTINATION="0.5.1-oracle-java7"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.5.0-openjdk-9"
+      TEMPLATE_VALUES="base_image=java:9-jre,nifi_version=0.5.0,git_tag_name=nifi-0.5.0,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.0-openjdk-9"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.5.0-openjdk-8,latest"
+      TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.5.0,git_tag_name=nifi-0.5.0,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.0-openjdk-8"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.5.0-openjdk-7"
+      TEMPLATE_VALUES="base_image=java:7-jre,nifi_version=0.5.0,git_tag_name=nifi-0.5.0,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.0-openjdk-7"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.5.0-oracle-java8"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=0.5.0,git_tag_name=nifi-0.5.0,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.0-oracle-java8"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.5.0-oracle-java7"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.7,nifi_version=0.5.0,git_tag_name=nifi-0.5.0,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.5.0-oracle-java7"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.1-openjdk-9"
+      TEMPLATE_VALUES="base_image=java:9-jre,nifi_version=0.4.1,git_tag_name=nifi-0.4.1,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.4.1-openjdk-9"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.1-openjdk-8,latest"
+      TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.4.1,git_tag_name=nifi-0.4.1,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.4.1-openjdk-8"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.1-openjdk-7"
+      TEMPLATE_VALUES="base_image=java:7-jre,nifi_version=0.4.1,git_tag_name=nifi-0.4.1,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.4.1-openjdk-7"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.1-oracle-java8"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=0.4.1,git_tag_name=nifi-0.4.1,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.4.1-oracle-java8"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.1-oracle-java7"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.7,nifi_version=0.4.1,git_tag_name=nifi-0.4.1,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.4.1-oracle-java7"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.0-openjdk-9"
+      TEMPLATE_VALUES="base_image=java:9-jre,nifi_version=0.4.0,git_tag_name=nifi-0.4.0,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.4.0-openjdk-9"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.0-openjdk-8,latest"
+      TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.4.0,git_tag_name=nifi-0.4.0,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.4.0-openjdk-8"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.0-openjdk-7"
+      TEMPLATE_VALUES="base_image=java:7-jre,nifi_version=0.4.0,git_tag_name=nifi-0.4.0,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.4.0-openjdk-7"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.0-oracle-java8"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=0.4.0,git_tag_name=nifi-0.4.0,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.4.0-oracle-java8"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="0.4.0-oracle-java7"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.7,nifi_version=0.4.0,git_tag_name=nifi-0.4.0,distribution_url=http://apache.arvixe.com"
+      DESTINATION="0.4.0-oracle-java7"
 script: ./travis_build.sh
