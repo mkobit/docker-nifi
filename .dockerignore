@@ -1,4 +1,6 @@
 .git/
+templates/
+
 .gitignore
 .travis.yml
 build-travis-docker.sh
