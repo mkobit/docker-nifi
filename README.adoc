@@ -1,11 +1,17 @@
 = Docker Apache NiFi
 
-image:https://travis-ci.org/mkobit/docker-nifi.svg?branch=master[title="Build Status",
-alt="Build Status", link="https://travis-ci.org/mkobit/docker-nifi"]
+image:https://img.shields.io/badge/license-MIT-blue.svg[
+title="MIT license", alt="MIT License"]
+image:https://travis-ci.org/mkobit/docker-nifi.svg?branch=master[title="Build
+Status", alt="Build Status", link="https://travis-ci.org/mkobit/docker-nifi"]
 image:https://img.shields.io/docker/stars/mkobit/nifi.svg[title="Docker repository stars",
 alt="Stars on Docker Hub", link="https://hub.docker.com/r/mkobit/nifi/"]
 image:https://img.shields.io/docker/pulls/mkobit/nifi.svg[title="Docker image
 pulls", alt="Docker image pulls", link="https://hub.docker.com/r/mkobit/nifi/"]
+image:https://img.shields.io/github/issues/mkobit/docker-nifi.svg[
+title="Github issues", alt="Github issues",
+link="https://github.com/mkobit/docker-nifi/issues"]
+
 
 This is an unofficial https://nifi.apache.org/[Apache NiFi] Docker image. The
 images are built by https://travis-ci.org/mkobit/docker-nifi[Travis CI] and are
