@@ -43,6 +43,10 @@ def write_template(template_file, substitions, destination_file):
   logger.info('Writing to destination_file={}'.format(destination_file.name))
   destination_file.write(content)
 
+def generate_image_tags(repository, tags):
+  for tag in tags:
+    yield '{}:{}'.format(repository, tag)
+
 def generate(args):
   logger.info('Beginning "generate" phase')
   substitutions = args.template_substitutions
@@ -59,15 +63,11 @@ def build(args):
   repository = args.repository
   logger.info('Building dockerfile={} for repository={} with tags={}'.format(
     filename, repository, tags))
-  docker_tags = map(lambda t: '{repo}:{tag}'.format(repo=repository, tag=t),
-    tags)
-  tag_args = []
-  for docker_tag in docker_tags:
-    tag_args.extend(['--tag', docker_tag])
-  args = ['docker', 'build', ] + tag_args + ['--file', filename, '.']
-  logger.info('Running subprocess with args={}'.format(args))
-  subprocess.run(args, check=True)
-  # TODO: redirect subprocess output to logger
+  for tag in generate_image_tags(repository, tags):
+    args = ['docker', 'build', '--tag', tag, '--file', filename, '.']
+    logger.info('Running subprocess with args={}'.format(args))
+    # TODO: redirect subprocess output to logger
+    subprocess.run(args, check=True)
   logger.info('Ending "build" phase')
 
 def push(args):
@@ -79,9 +79,6 @@ def push(args):
   tags = args.tags
   repository = args.repository
   dont_push = args.no_push
-  # TODO: reduce code duplication for generating tags here
-  docker_tags = map(lambda t: '{repo}:{tag}'.format(repo=repository, tag=t),
-    tags)
 
   if dont_push:
     logger.info('Skipping login. Not pushing built images.')
@@ -93,12 +90,12 @@ def push(args):
     if completed_process.returncode != 0:
       raise RuntimeError('Error running docker login. Return code={}'.format(
         completed_process.returncode))
-  for docker_tag in docker_tags:
+  for tag in generate_image_tags(repository, tags):
     if dont_push:
-      logger.info('Skipping push of docker image={}'.format(docker_tag))
+      logger.info('Skipping push of docker image={}'.format(tag))
     else:
-      logger.info('Pushing docker image={}'.format(docker_tag))
-      push_args = ['docker', 'push', docker_tag]
+      logger.info('Pushing docker image={}'.format(tag))
+      push_args = ['docker', 'push', tag]
       subprocess.run(push_args, check=True)
   logger.info('Ending "push" phase')
 
