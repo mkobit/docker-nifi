@@ -18,7 +18,7 @@ elif [ "${TRAVIS_PULL_REQUEST}" == "false" -a "${TRAVIS_BRANCH}" == "master" ]; 
     --tags "${DOCKER_TAGS}" \
     --username "${DOCKER_USERNAME}" \
     --email "${DOCKER_EMAIL}" \
-    --password "${DOCKER_PASSWORD}" \
+    --password "${DOCKER_PASSWORD}"
 else
   echo "No action for [${TRAVIS_REPO_SLUG}]"
 fi
