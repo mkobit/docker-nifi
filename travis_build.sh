@@ -19,14 +19,6 @@ elif [ "${TRAVIS_PULL_REQUEST}" == "false" -a "${TRAVIS_BRANCH}" == "master" ]; 
     --username "${DOCKER_USERNAME}" \
     --email "${DOCKER_EMAIL}" \
     --password "${DOCKER_PASSWORD}" \
-    --no-push
 else
-  echo "No action for [${TRAVIS_BRANCH}]"
-  # TODO: remove this build part before merging
-  echo './make_docker.py build \
-    --template-file "${TEMPLATE_FILE}" \
-    --template-substitutions "${TEMPLATE_VALUES}" \
-    --destination-file "${DESTINATION}" \
-    --repository "${DOCKER_REPOSITORY}" \
-    --tags "${DOCKER_TAGS}"'
+  echo "No action for [${TRAVIS_REPO_SLUG}]"
 fi
