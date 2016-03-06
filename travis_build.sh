@@ -23,10 +23,10 @@ elif [ "${TRAVIS_PULL_REQUEST}" == "false" -a "${TRAVIS_BRANCH}" == "master" ]; 
 else
   echo "No action for [${TRAVIS_BRANCH}]"
   # TODO: remove this build part before merging
-  ./make_docker.py build \
+  echo './make_docker.py build \
     --template-file "${TEMPLATE_FILE}" \
     --template-substitutions "${TEMPLATE_VALUES}" \
     --destination-file "${DESTINATION}" \
     --repository "${DOCKER_REPOSITORY}" \
-    --tags "${DOCKER_TAGS}"
+    --tags "${DOCKER_TAGS}"'
 fi
