@@ -17,7 +17,8 @@ RUN set -x \
         && mkdir -p $$NIFI_HOME \
         && tar -z -x -f /tmp/nifi-bin.tar.gz -C $$NIFI_HOME --strip-components=1 \
         && rm /tmp/nifi-bin.tar.gz /tmp/nifi-bin.tar.gz.asc /tmp/nifi-bin.tar.gz.md5 /tmp/nifi-bin.tar.gz.sha1 \
-        && rm /tmp/nifi-keys.txt
+        && rm /tmp/nifi-keys.txt \
+        && sed -i -e "s|^nifi.ui.banner.text=.*$$|nifi.ui.banner.text=Docker NiFi $${NIFI_VERSION}|" $${NIFI_HOME}/conf/nifi.properties
 
 RUN groupadd nifi \
         && useradd -r -g nifi nifi \
