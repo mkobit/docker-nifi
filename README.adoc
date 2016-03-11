@@ -1,4 +1,6 @@
 = Docker Apache NiFi
+Mike Kobit <https://github.com/mkobit[@mkobit]
+:toc: preamble
 
 image:https://img.shields.io/badge/license-MIT-blue.svg[
 title="MIT license", alt="MIT License"]
@@ -12,12 +14,9 @@ image:https://img.shields.io/github/issues/mkobit/docker-nifi.svg[
 title="Github issues", alt="Github issues",
 link="https://github.com/mkobit/docker-nifi/issues"]
 
-
 This is an unofficial https://nifi.apache.org/[Apache NiFi] Docker image. The
 images are built by https://travis-ci.org/mkobit/docker-nifi[Travis CI] and are
 available on https://hub.docker.com/r/mkobit/nifi/[Docker Hub at mkobit/nifi].
-
-:toc:
 
 == Images
 
