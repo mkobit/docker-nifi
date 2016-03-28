@@ -24,12 +24,12 @@ env:
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
       DOCKER_TAGS="0.6.0-openjdk-7"
-      TEMPLATE_VALUES="base_image=java:7-jre,nifi_version=0.6.0,distribution_url=http://mirror.sdunix.com"
+      TEMPLATE_VALUES="base_image=java:7-jre,nifi_version=0.6.0,distribution_url=http://www.motorlogy.com/apache"
       DESTINATION="0.6.0-openjdk-7.dockerfile"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
       DOCKER_TAGS="0.6.0-oracle-java8"
-      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=0.6.0,distribution_url=http://mirror.metrocast.net"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=0.6.0,distribution_url=http://apache.cs.utah.edu"
       DESTINATION="0.6.0-oracle-java8.dockerfile"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
