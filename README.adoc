@@ -41,6 +41,21 @@ The images are built by {uri-travis-ci}[Travis CI] and are available on {uri-doc
 | `mkobit/nifi:latest`
 | image:{uri-imagelayers-badge}:latest.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:latest"]
 
+| `mkobit/nifi:0.6.1-openjdk-9`
+| image:{uri-imagelayers-badge}:0.6.1-openjdk-9.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:0.6.1-openjdk-9"]
+
+| `mkobit/nifi:0.6.1-openjdk-8`
+| image:{uri-imagelayers-badge}:0.6.1-openjdk-8.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:0.6.1-openjdk-8"]
+
+| `mkobit/nifi:0.6.1-openjdk-7`
+| image:{uri-imagelayers-badge}:0.6.1-openjdk-7.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:0.6.1-openjdk-7"]
+
+| `mkobit/nifi:0.6.1-oracle-java8`
+| image:{uri-imagelayers-badge}:0.6.1-oracle-java8.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:0.6.1-oracle-java8"]
+
+| `mkobit/nifi:0.6.1-oracle-java7`
+| image:{uri-imagelayers-badge}:0.6.1-oracle-java7.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:0.6.1-oracle-java7"]
+
 | `mkobit/nifi:0.6.0-openjdk-9`
 | image:{uri-imagelayers-badge}:0.6.0-openjdk-9.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:0.6.0-openjdk-9"]
 
@@ -182,6 +197,21 @@ To get subcommand help, you can specify `--help` for that option:
 ----
 
 You can see the main script uses from the link:.travis.yml[_.travis.yml] file.
+
+==== Build example
+
+Here is an example that would be executed on the CI system:
+
+[source, console]
+.make_docker.py build
+----
+./make_docker.py build \
+    --template-substitutions "base_image=java:9-jre,nifi_version=0.6.1,distribution_url=http://apache.mirrors.ionfish.org" \
+    --template-file templates/Dockerfile-template \
+    --destination-file 0.6.1-openjdk-9.dockerfile \
+    --repository mkobit/nifi \
+    --tags 0.6.1-openjdk-8,latest
+----
 
 === Templates
 
