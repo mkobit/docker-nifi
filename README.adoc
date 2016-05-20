@@ -210,7 +210,7 @@ Here is an example that would be executed on the CI system:
     --template-file templates/Dockerfile-template \
     --destination-file 0.6.1-openjdk-9.dockerfile \
     --repository mkobit/nifi \
-    --tags 0.6.1-openjdk-8,latest
+    --tags 0.6.1-openjdk-9,latest
 ----
 
 === Templates
