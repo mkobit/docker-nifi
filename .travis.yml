@@ -310,3 +310,7 @@ matrix:
         TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.3.0,distribution_url=http://mirrors.sonic.net/apache"
         DESTINATION="0.2.1.dockerfile"
 script: ./travis_build.sh
+notifications:
+  email:
+    on_success: never
+    on_failure: change
