@@ -24,22 +24,22 @@ env:
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
       DOCKER_TAGS="0.7.0-openjdk-8,latest"
-      TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.7.0,distribution_url=http://apache.cs.utah.edu"
+      TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.7.0,distribution_url=http://mirrors.sonic.net/apache"
       DESTINATION="0.7.0-openjdk-8.dockerfile"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
       DOCKER_TAGS="0.7.0-openjdk-7"
-      TEMPLATE_VALUES="base_image=java:7-jre,nifi_version=0.7.0,distribution_url=http://apache.cs.utah.edu"
+      TEMPLATE_VALUES="base_image=java:7-jre,nifi_version=0.7.0,distribution_url=http://mirrors.sonic.net/apache"
       DESTINATION="0.7.0-openjdk-7.dockerfile"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
       DOCKER_TAGS="0.7.0-oracle-java8"
-      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=0.7.0,distribution_url=http://apache.cs.utah.edu"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=0.7.0,distribution_url=http://mirrors.sonic.net/apache"
       DESTINATION="0.7.0-oracle-java8.dockerfile"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
       DOCKER_TAGS="0.7.0-oracle-java7"
-      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.7,nifi_version=0.7.0,distribution_url=http://apache.cs.utah.edu"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.7,nifi_version=0.7.0,distribution_url=http://mirrors.sonic.net/apache"
       DESTINATION="0.7.0-oracle-java7.dockerfile"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
