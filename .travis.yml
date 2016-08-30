@@ -24,12 +24,12 @@ env:
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
       DOCKER_TAGS="0.7.0-openjdk-8,latest"
-      TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.7.0,distribution_url=http://mirrors.sonic.net/apache"
+      TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.7.0,distribution_url=http://apache.cs.utah.edu"
       DESTINATION="0.7.0-openjdk-8.dockerfile"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
       DOCKER_TAGS="0.7.0-openjdk-7"
-      TEMPLATE_VALUES="base_image=java:7-jre,nifi_version=0.7.0,distribution_url=http://apache.claz.org"
+      TEMPLATE_VALUES="base_image=java:7-jre,nifi_version=0.7.0,distribution_url=http://apache.cs.utah.edu"
       DESTINATION="0.7.0-openjdk-7.dockerfile"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
@@ -39,7 +39,7 @@ env:
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
       DOCKER_TAGS="0.7.0-oracle-java7"
-      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.7,nifi_version=0.7.0,distribution_url=http://apache.mirrors.ionfish.org"
+      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.7,nifi_version=0.7.0,distribution_url=http://apache.cs.utah.edu"
       DESTINATION="0.7.0-oracle-java7.dockerfile"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
