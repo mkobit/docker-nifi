@@ -23,7 +23,7 @@ env:
       DESTINATION="1.0.0-oracle-java8.dockerfile"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
-      DOCKER_TAGS="0.7.0-openjdk-8,latest"
+      DOCKER_TAGS="0.7.0-openjdk-8"
       TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.7.0,distribution_url=http://mirrors.sonic.net/apache"
       DESTINATION="0.7.0-openjdk-8.dockerfile"
     - >-
@@ -48,7 +48,7 @@ env:
       DESTINATION="0.6.1-openjdk-9.dockerfile"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
-      DOCKER_TAGS="0.6.1-openjdk-8,latest"
+      DOCKER_TAGS="0.6.1-openjdk-8"
       TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.6.1,distribution_url=http://apache.go-parts.com"
       DESTINATION="0.6.1-openjdk-8.dockerfile"
     - >-
@@ -206,7 +206,7 @@ matrix:
 # Use the full "env" string for exclusion.
     - env: >-
         TEMPLATE_FILE="templates/Dockerfile-template"
-        DOCKER_TAGS="0.7.0-openjdk-8,latest"
+        DOCKER_TAGS="0.7.0-openjdk-8"
         TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.7.0,distribution_url=http://mirrors.sonic.net/apache"
         DESTINATION="0.7.0-openjdk-8.dockerfile"
     - env: >-
@@ -231,7 +231,7 @@ matrix:
         DESTINATION="0.6.1-openjdk-9.dockerfile"
     - env: >-
         TEMPLATE_FILE="templates/Dockerfile-template"
-        DOCKER_TAGS="0.6.1-openjdk-8,latest"
+        DOCKER_TAGS="0.6.1-openjdk-8"
         TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=0.6.1,distribution_url=http://apache.go-parts.com"
         DESTINATION="0.6.1-openjdk-8.dockerfile"
     - env: >-
