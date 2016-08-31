@@ -75,7 +75,6 @@ def push(args):
   logger.info('Beginning "push" phase')
   username = args.username
   password = args.password
-  email = args.email
   tags = args.tags
   repository = args.repository
   dont_push = args.no_push
@@ -83,7 +82,7 @@ def push(args):
   if dont_push:
     logger.info('Skipping login. Not pushing built images.')
   else:
-    login_args = ['docker', 'login', '--email', email, '--username', username,
+    login_args = ['docker', 'login', '--username', username,
       '--password', password]
     logger.info('Executing "docker login" with username={}'.format(username))
     completed_process = subprocess.run(login_args, check=False)
@@ -126,8 +125,6 @@ def add_push_arguments(argument_group):
     help='Docker Hub username')
   argument_group.add_argument('--password', type=str, required=True,
     help='Docker Hub password')
-  argument_group.add_argument('--email', type=str, required=True,
-    help='Docker Hub email')
   argument_group.add_argument('--no-push', action='store_true',
     help='Does not push the built images to the remote')
 
