@@ -41,11 +41,29 @@ The images are built by {uri-travis-ci}[Travis CI] and are available on {uri-doc
 | `mkobit/nifi:latest`
 | image:{uri-imagelayers-badge}:latest.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:latest"]
 
+| `mkobit/nifi:1.1.0-openjdk-8`
+| image:{uri-imagelayers-badge}:1.1.0-openjdk-8.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:1.1.0-openjdk-8"]
+
+| `mkobit/nifi:1.1.0-oracle-java8`
+| image:{uri-imagelayers-badge}:1.1.0-oracle-java8.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:1.1.0-oracle-java8"]
+
 | `mkobit/nifi:1.0.0-openjdk-8`
 | image:{uri-imagelayers-badge}:1.0.0-openjdk-8.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:1.0.0-openjdk-8"]
 
 | `mkobit/nifi:1.0.0-oracle-java8`
 | image:{uri-imagelayers-badge}:1.0.0-oracle-java8.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:1.0.0-oracle-java8"]
+
+| `mkobit/nifi:0.7.1-openjdk-8`
+| image:{uri-imagelayers-badge}:0.7.1-openjdk-8.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:0.7.1-openjdk-8"]
+
+| `mkobit/nifi:0.7.1-openjdk-7`
+| image:{uri-imagelayers-badge}:0.7.1-openjdk-7.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:0.7.1-openjdk-7"]
+
+| `mkobit/nifi:0.7.1-oracle-java8`
+| image:{uri-imagelayers-badge}:0.7.1-oracle-java8.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:0.7.1-oracle-java8"]
+
+| `mkobit/nifi:0.7.1-oracle-java7`
+| image:{uri-imagelayers-badge}:0.7.1-oracle-java7.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:0.7.1-oracle-java7"]
 
 | `mkobit/nifi:0.7.0-openjdk-8`
 | image:{uri-imagelayers-badge}:0.7.0-openjdk-8.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:0.7.0-openjdk-8"]
