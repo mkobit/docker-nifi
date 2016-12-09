@@ -224,9 +224,9 @@ Here is an example that would be executed on the CI system:
 .make_docker.py build
 ----
 ./make_docker.py build \
-    --template-substitutions "base_image=java:8-jre,nifi_version=0.7.0,distribution_url=http://apache.mirrors.ionfish.org" \
+    --template-substitutions "base_image=java:8-jre,nifi_version=0.7.0" \
     --template-file templates/Dockerfile-template \
-    --destination-file 0.7.0-openjdk-9.dockerfile \
+    --destination-file 0.7.0-openjdk-8.dockerfile \
     --repository mkobit/nifi \
     --tags 0.7.0-openjdk-8,latest
 ----
