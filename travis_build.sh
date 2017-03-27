@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
 if [ "${TRAVIS_PULL_REQUEST}" != "false" ]; then
   echo "Build Pull Request #${TRAVIS_PULL_REQUEST} => Branch [${TRAVIS_BRANCH}]"

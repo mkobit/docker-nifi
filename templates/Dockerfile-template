@@ -2,12 +2,14 @@ FROM ${base_image}
 ENV NIFI_VERSION=${nifi_version} \
         NIFI_HOME=/opt/nifi
 
+ARG DOWNLOAD_SITE=https://www.apache.org/dist/nifi/$$NIFI_VERSION/nifi-$$NIFI_VERSION-bin.tar.gz
+
 # Picked the recommended mirror from Apache for the distribution.
 # Import the Apache NiFi release keys, download the release, and set up a user to run NiFi.
 RUN set -x \
         && curl -Lf https://dist.apache.org/repos/dist/release/nifi/KEYS -o /tmp/nifi-keys.txt \
         && gpg --import /tmp/nifi-keys.txt \
-        && curl -s -Lf https://www.apache.org/dyn/closer.lua\?path\=/nifi/$$NIFI_VERSION/nifi-$$NIFI_VERSION-bin.tar.gz | grep -o '<strong>.*</strong>' | head -n 1 | sed -E 's/(<strong>|<\/strong>)//g' | xargs curl -vLf -o /tmp/nifi-bin.tar.gz \
+        && curl -vLf $$DOWNLOAD_SITE -o /tmp/nifi-bin.tar.gz \
         && curl -Lf https://www.apache.org/dist/nifi/$$NIFI_VERSION/nifi-$$NIFI_VERSION-bin.tar.gz.asc -o /tmp/nifi-bin.tar.gz.asc \
         && curl -Lf https://www.apache.org/dist/nifi/$$NIFI_VERSION/nifi-$$NIFI_VERSION-bin.tar.gz.md5 -o /tmp/nifi-bin.tar.gz.md5 \
         && curl -Lf https://www.apache.org/dist/nifi/$$NIFI_VERSION/nifi-$$NIFI_VERSION-bin.tar.gz.sha1 -o /tmp/nifi-bin.tar.gz.sha1 \
