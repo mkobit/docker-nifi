@@ -158,5 +158,7 @@ if __name__ == '__main__':
   args = parser.parse_args()
   logger.setLevel(args.loggingLevel)
   logger.debug('Starting make_docker.py with args="{}"'.format(args))
-  # TODO: if just ./make_docker.py is ran, argparse doesn't execute as desired
-  args.func(args)
+  if 'func' in vars(args):
+    args.func(args)
+  else:
+    parser.print_help()
