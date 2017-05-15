@@ -18,29 +18,9 @@ env:
       DESTINATION="1.1.1-openjdk-8.dockerfile"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
-      DOCKER_TAGS="1.1.1-oracle-java8"
-      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=1.1.1"
-      DESTINATION="1.1.1-oracle-java8.dockerfile"
-    - >-
-      TEMPLATE_FILE="templates/Dockerfile-template"
       DOCKER_TAGS="1.1.0-openjdk-8"
       TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=1.1.0"
       DESTINATION="1.1.0-openjdk-8.dockerfile"
-    - >-
-      TEMPLATE_FILE="templates/Dockerfile-template"
-      DOCKER_TAGS="1.1.0-oracle-java8"
-      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=1.1.0"
-      DESTINATION="1.1.0-oracle-java8.dockerfile"
-    - >-
-      TEMPLATE_FILE="templates/Dockerfile-template"
-      DOCKER_TAGS="1.0.0-openjdk-8"
-      TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=1.0.0"
-      DESTINATION="1.0.0-openjdk-8.dockerfile"
-    - >-
-      TEMPLATE_FILE="templates/Dockerfile-template"
-      DOCKER_TAGS="1.0.0-oracle-java8"
-      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=1.0.0"
-      DESTINATION="1.0.0-oracle-java8.dockerfile"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
       DOCKER_TAGS="0.7.1-openjdk-8"
@@ -51,16 +31,6 @@ env:
       DOCKER_TAGS="0.7.1-openjdk-7"
       TEMPLATE_VALUES="base_image=openjdk:7-jre,nifi_version=0.7.1"
       DESTINATION="0.7.1-openjdk-7.dockerfile"
-    - >-
-      TEMPLATE_FILE="templates/Dockerfile-template"
-      DOCKER_TAGS="0.7.1-oracle-java8"
-      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=0.7.1"
-      DESTINATION="0.7.1-oracle-java8.dockerfile"
-    - >-
-      TEMPLATE_FILE="templates/Dockerfile-template"
-      DOCKER_TAGS="0.7.1-oracle-java7"
-      TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.7,nifi_version=0.7.1"
-      DESTINATION="0.7.1-oracle-java7.dockerfile"
 matrix:
   exclude:
 # Use the full "env" string for exclusion.
@@ -69,21 +39,6 @@ matrix:
         DOCKER_TAGS="1.1.0-openjdk-8"
         TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=1.1.0"
         DESTINATION="1.1.0-openjdk-8.dockerfile"
-    - env: >-
-        TEMPLATE_FILE="templates/Dockerfile-template"
-        DOCKER_TAGS="1.1.0-oracle-java8"
-        TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=1.1.0"
-        DESTINATION="1.1.0-oracle-java8.dockerfile"
-    - env: >-
-        TEMPLATE_FILE="templates/Dockerfile-template"
-        DOCKER_TAGS="1.0.0-openjdk-8"
-        TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=1.0.0"
-        DESTINATION="1.0.0-openjdk-8.dockerfile"
-    - env: >-
-        TEMPLATE_FILE="templates/Dockerfile-template"
-        DOCKER_TAGS="1.0.0-oracle-java8"
-        TEMPLATE_VALUES="base_image=airdock/oracle-jdk:jre-1.8,nifi_version=1.0.0"
-        DESTINATION="1.0.0-oracle-java8.dockerfile"
 script: ./travis_build.sh
 notifications:
   email:
