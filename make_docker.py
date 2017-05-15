@@ -5,9 +5,11 @@ import logging
 import string
 import subprocess
 
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
-                    datefmt='%m/%d/%Y %I:%M:%S %p')
-logger = logging.getLogger('make_docker')
+logging.basicConfig(
+  format='%(asctime)s - %(levelname)s - %(message)s',
+  datefmt='%m/%d/%Y %I:%M:%S %p'
+)
+logger = logging.getLogger(__name__)
 
 def template_properties(arg):
   props = arg.split(',')
