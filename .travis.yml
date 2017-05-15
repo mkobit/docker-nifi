@@ -13,32 +13,22 @@ env:
   matrix:
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
-      DOCKER_TAGS="1.1.1-openjdk-8,latest"
+      DOCKER_TAGS="1.2.0-openjdk-8,latest"
       TEMPLATE_VALUES="base_image=openjdk:8-jre,nifi_version=1.1.1"
-      DESTINATION="1.1.1-openjdk-8.dockerfile"
+      DESTINATION="1.2.0-openjdk-8.dockerfile"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
-      DOCKER_TAGS="1.1.0-openjdk-8"
-      TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=1.1.0"
-      DESTINATION="1.1.0-openjdk-8.dockerfile"
+      DOCKER_TAGS="0.7.2-openjdk-8"
+      TEMPLATE_VALUES="base_image=openjdk:8-jre,nifi_version=0.7.2"
+      DESTINATION="0.7.2-openjdk-8.dockerfile"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
-      DOCKER_TAGS="0.7.1-openjdk-8"
-      TEMPLATE_VALUES="base_image=openjdk:8-jre,nifi_version=0.7.1"
-      DESTINATION="0.7.1-openjdk-8.dockerfile"
-    - >-
-      TEMPLATE_FILE="templates/Dockerfile-template"
-      DOCKER_TAGS="0.7.1-openjdk-7"
-      TEMPLATE_VALUES="base_image=openjdk:7-jre,nifi_version=0.7.1"
-      DESTINATION="0.7.1-openjdk-7.dockerfile"
+      DOCKER_TAGS="0.7.2-openjdk-7"
+      TEMPLATE_VALUES="base_image=openjdk:7-jre,nifi_version=0.7.2"
+      DESTINATION="0.7.2-openjdk-7.dockerfile"
 matrix:
   exclude:
 # Use the full "env" string for exclusion.
-    - env: >-
-        TEMPLATE_FILE="templates/Dockerfile-template"
-        DOCKER_TAGS="1.1.0-openjdk-8"
-        TEMPLATE_VALUES="base_image=java:8-jre,nifi_version=1.1.0"
-        DESTINATION="1.1.0-openjdk-8.dockerfile"
 script: ./travis_build.sh
 notifications:
   email:
