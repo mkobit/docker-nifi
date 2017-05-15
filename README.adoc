@@ -25,7 +25,7 @@ image:{uri-shields-docker-stars}[title="Docker repository stars", alt="Stars on 
 image:{uri-shields-docker-pulls}[title="Docker image pulls", alt="Docker image pulls", link="https://hub.docker.com/r/mkobit/nifi/"]
 image:{uri-shields-github-issues}[title="Github issues", alt="Github issues", link="https://github.com/mkobit/docker-nifi/issues"]
 
-This is an unofficial hlink:ttps://nifi.apache.org/[Apache NiFi] Docker image.
+This is an unofficial link:ttps://nifi.apache.org/[Apache NiFi] Docker image.
 The images are built by link:{uri-travis-ci}[Travis CI] and are available on link:{uri-docker-hub}[Docker Hub at mkobit/nifi].
 
 == Images
