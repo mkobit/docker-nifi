@@ -25,15 +25,15 @@ image:{uri-shields-docker-stars}[title="Docker repository stars", alt="Stars on 
 image:{uri-shields-docker-pulls}[title="Docker image pulls", alt="Docker image pulls", link="https://hub.docker.com/r/mkobit/nifi/"]
 image:{uri-shields-github-issues}[title="Github issues", alt="Github issues", link="https://github.com/mkobit/docker-nifi/issues"]
 
-This is an unofficial https://nifi.apache.org/[Apache NiFi] Docker image.
-The images are built by {uri-travis-ci}[Travis CI] and are available on {uri-docker-hub}[Docker Hub at mkobit/nifi].
+This is an unofficial hlink:ttps://nifi.apache.org/[Apache NiFi] Docker image.
+The images are built by link:{uri-travis-ci}[Travis CI] and are available on link:{uri-docker-hub}[Docker Hub at mkobit/nifi].
 
 == Images
 
 [cols=2, options="header"]
 |===
 | Image
-| Image Size (by {uri-imagelayers}[imagelayers.io])
+| Image Size (by link:{uri-imagelayers}[imagelayers.io])
 
 | `mkobit/nifi:latest`
 | image:{uri-imagelayers-badge}:latest.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:latest"]
@@ -79,7 +79,7 @@ docker pull mkobit/nifi
 docker run -it --rm -p 8080-8081:8080-8081 mkobit/nifi
 ----
 
-. Go to default local NiFi endpoint in browser - http://localhost:8080/nifi/[http://localhost:8080/nifi/]
+. Go to default local NiFi endpoint in browser - link:http://localhost:8080/nifi/[http://localhost:8080/nifi/]
 
 == Building Images
 
@@ -154,13 +154,13 @@ There are a couple utility scripts to build and run that image:
 == Building Extensions
 
 This can easily be used as a base image to create NiFi applications.
-One way would be to build a https://nifi.apache.org/docs/nifi-docs/html/developer-guide.html#nars[NAR] with extensions built upon the framework and including it in your own image.
-I recommend reading the https://nifi.apache.org/docs/nifi-docs/html/developer-guide.html[Developer's Guide] if you want to head down this route.
+One way would be to build a link:https://nifi.apache.org/docs/nifi-docs/html/developer-guide.html#nars[NAR] with extensions built upon the framework and including it in your own image.
+I recommend reading the link:https://nifi.apache.org/docs/nifi-docs/html/developer-guide.html[Developer's Guide] if you want to head down this route.
 
 == Volumes
 
 These are the default locations as specified by the Apache NiFi properties.
-You can find more information about each of these repositories on the https://nifi.apache.org/docs/nifi-docs/html/administration-guide.html[System Administration Guide].
+You can find more information about each of these repositories on the link:https://nifi.apache.org/docs/nifi-docs/html/administration-guide.html[System Administration Guide].
 
 - `$NIFI_HOME/database_repository` - user access and flow controller history
 - `$NIFI_HOME/flowfile_repository` - FlowFile attributes and current state in
@@ -170,17 +170,17 @@ the system
 
 == Official Apache NiFi Documentation and Guides
 
-- https://nifi.apache.org/docs.html[Overview]
-- https://nifi.apache.org/docs/nifi-docs/html/user-guide.html[User Guide]
-- https://nifi.apache.org/docs/nifi-docs/html/expression-language-guide.html[Expression Language]
-- https://nifi.apache.org/quickstart.html[Development Quickstart]
-- https://nifi.apache.org/developer-guide.html[Developer's Guide]
-- https://nifi.apache.org/docs/nifi-docs/html/administration-guide.html[System Administrator]
+- link:https://nifi.apache.org/docs.html[Overview]
+- link:https://nifi.apache.org/docs/nifi-docs/html/user-guide.html[User Guide]
+- link:https://nifi.apache.org/docs/nifi-docs/html/expression-language-guide.html[Expression Language]
+- link:https://nifi.apache.org/quickstart.html[Development Quickstart]
+- link:https://nifi.apache.org/developer-guide.html[Developer's Guide]
+- link:https://nifi.apache.org/docs/nifi-docs/html/administration-guide.html[System Administrator]
 
 == ListenHTTP Processor
 
 The standard library has a built-in processor for an HTTP endpoint listener.
-That processor is named https://nifi.apache.org/docs/nifi-docs/components/org.apache.nifi.processors.standard.ListenHTTP/index.html[`ListenHTTP`].
+That processor is named link:https://nifi.apache.org/docs/nifi-docs/components/org.apache.nifi.processors.standard.ListenHTTP/index.html[`ListenHTTP`].
 You should set the **Listening Port** of the instantiated processor to `8081` if you follow the instructions from above.
 
 == Usage
@@ -190,16 +190,16 @@ I personally have not attempted to use this in a production use case.
 
 == Issues
 
-If you have any problems, comments, or questions with this image, feel free to reach out at {uri-github}[mkobit/docker-nifi].
-If you have Apache NiFi specific questions or concerns you can reach out on one of the {uri-nifi-mailing-lists}[community mailing lists].
+If you have any problems, comments, or questions with this image, feel free to reach out at link:{uri-github}[mkobit/docker-nifi].
+If you have Apache NiFi specific questions or concerns you can reach out on one of the link:{uri-nifi-mailing-lists}[community mailing lists].
 
 == Contributing to this repository
 
 Contributing changes to this repository is extremely welcome.
 If it is a larger change, it is usually best to discuss your plans first.
-Please see the {uri-github-issues}[issues] to see if a similar issue already exists.
+Please see the link:{uri-github-issues}[issues] to see if a similar issue already exists.
 
 == Contributing to NiFi
 
-The Apache NiFi source code can be found on Github at {uri-github-nifi}[apache/nifi].
-You can browse issues related to the project on the {uri-nifi-jira}[Apache NiFi Jira].
+The Apache NiFi source code can be found on Github at link:{uri-github-nifi}[apache/nifi].
+You can browse issues related to the project on the link:{uri-nifi-jira}[Apache NiFi Jira].
