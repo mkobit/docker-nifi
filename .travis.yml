@@ -14,8 +14,13 @@ env:
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
       DOCKER_TAGS="1.3.0-openjdk-8,latest"
-      TEMPLATE_VALUES="base_image=openjdk:8-jre,nifi_version=1.2.0"
+      TEMPLATE_VALUES="base_image=openjdk:8-jre,nifi_version=1.3.0"
       DESTINATION="1.3.0-openjdk-8.dockerfile"
+    - >-
+      TEMPLATE_FILE="templates/Dockerfile-template"
+      DOCKER_TAGS="1.2.0-openjdk-8"
+      TEMPLATE_VALUES="base_image=openjdk:8-jre,nifi_version=1.2.0"
+      DESTINATION="1.2.0-openjdk-8.dockerfile"
     - >-
       TEMPLATE_FILE="templates/Dockerfile-template"
       DOCKER_TAGS="0.7.4-openjdk-8"
