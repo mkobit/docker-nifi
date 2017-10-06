@@ -42,14 +42,11 @@ The images are built by link:{uri-travis-ci}[Travis CI] and are available on lin
 | `mkobit/nifi:latest`
 | image:{uri-imagelayers-badge}:latest.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:latest"]
 
+| `mkobit/nifi:1.4.0-openjdk-8`
+| image:{uri-imagelayers-badge}:1.4.0-openjdk-8.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:1.4.0-openjdk-8"]
+
 | `mkobit/nifi:1.3.0-openjdk-8`
 | image:{uri-imagelayers-badge}:1.3.0-openjdk-8.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:1.3.0-openjdk-8"]
-
-| `mkobit/nifi:0.7.4-openjdk-8`
-| image:{uri-imagelayers-badge}:0.7.4-openjdk-8.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:0.7.4-openjdk-8"]
-
-| `mkobit/nifi:0.7.4-openjdk-7`
-| image:{uri-imagelayers-badge}:0.7.4-openjdk-7.svg[title="Image layers and size", alt="Image layers and size",link="{uri-imagelayers}?images=mkobit%2Fnifi:0.7.4-openjdk-7"]
 
 |===
 
